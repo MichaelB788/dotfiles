@@ -1,0 +1,46 @@
+{
+    // Color
+    "workbench.colorTheme": "Solarized Dark",
+
+    // Using system clipboard
+    "vim.useSystemClipboard": true,
+
+    // Leader key
+    "vim.leader": "<space>",
+
+    // Insert Mode
+    "vim.insertModeKeyBindings": [
+        { "before": ["<C-c>"], "after": ["<Esc>"] },
+
+        { "before": ["<C-l>"], "after": ["right"] },
+
+        { "before": ["<C-h>"], "after": ["left"] },
+
+        { "before": ["<C-j>"], "after": ["down"] },
+
+        { "before": ["<C-k>"], "after": ["up"] },
+    ],
+ 
+    // Normal ModeToggles
+    "vim.normalModeKeyBindings": [
+
+        // Opens the command palette
+        { "before": ["<leader>", "<leader>"], "commands": [ "workbench.action.showCommands" ], "silent": true },
+
+        // Window
+        { "before": ["<leader>", "w", "d"], "after": [":", "q", "<enter>"] }, // Closes a window
+        { "before": ["<leader>", "s", "p"], "after": [":", "v", "s", "<enter>"] }, // Splits the editor vertically
+
+        // Navigation
+        { "before": ["<leader>", "w", "h"], "after": ["<C-w>", "h"] },
+        { "before": ["<leader>", "w", "l"], "after": ["<C-w>", "l"] },
+        { "before": ["<leader>", "w", "j"], "after": ["<C-w>", "j"] },
+        { "before": ["<leader>", "w", "k"], "after": ["<C-w>", "k"] },
+    ],
+
+    "vim.visualModeKeyBindings": [],
+    "editor.minimap.enabled": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "git.openRepositoryInParentFolders": "always",
+    "redhat.telemetry.enabled": false
+}
