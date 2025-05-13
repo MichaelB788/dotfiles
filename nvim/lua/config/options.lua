@@ -20,7 +20,7 @@ o.wrap          = false
 
 -- appearance
 o.termguicolors = true
-o.signcolumn    = "no"
+o.signcolumn    = "yes"
 
 -- backspace
 o.backspace     = "indent,eol,start"

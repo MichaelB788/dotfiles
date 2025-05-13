@@ -19,7 +19,9 @@ km.set("n", "<leader>tn", "<cmd>tabnew<CR>") -- Open a new tab
 km.set("n", "<leader>sp", "<cmd>vsplit<CR>") -- Perform vertical split
 
 -- Navigation
-km.set("n", "w", "<C-w>") -- Pretense to window navigation
+km.set("n", "w", "<C-w>")  -- Pretense to window navigation
+km.set("n", "<S-l>", "gt") -- Go to next tab
+km.set("n", "<S-h>", "gT") -- Go to next tab
 
 -- Code / LSP
 km.set('n', 'gD', vim.lsp.buf.declaration)                    -- Go to declaration
