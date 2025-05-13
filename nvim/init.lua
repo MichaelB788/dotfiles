@@ -2,54 +2,50 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- Lazy and Treesitter
+-- Lazy
 require("config.lazy")
 
-require("lazy").setup({
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-})
-
-require'nvim-treesitter.configs'.setup {
-    -- A list of parser names, or "all" (the listed parsers MUST always be installed)
+-- Treesitter configs
+require'nvim-treesitter.configs'.setup{
     ensure_installed = {
         "c",
         "c_sharp",
         "cpp",
-        "python",
+        "bash",
+        "diff",
+        "html",
+        "javascript",
+        "jsdoc",
+        "json",
+        "jsonc",
         "lua",
-        "typescript",
+        "luadoc",
+        "luap",
+        "markdown",
+        "markdown_inline",
+        "printf",
+        "python",
+        "query",
+        "regex",
         "rust",
+        "toml",
+        "tsx",
+        "typescript",
+        "vim",
+        "vimdoc",
+        "xml",
+        "yaml",
     },
 
     auto_install = true,
 
-    highlight = {
-        enable = true,
-    },
+    highlight = { enable = true, },
 
-    indent = {
-        enable = true,
-    },
+    indent = { enable = true, },
 }
 
--- LSP Zero
-local lsp = require('lsp-zero').preset({
-    name = 'minimal',
-    set_lsp_keymaps = true,
-    manage_nvim_cmp = false,
-    suggest_lsp_servers = true,
-})
-
--- Configure lua language server for neovim
-lsp.nvim_workspace()
-lsp.setup()
-
 -- Lualine
-require("lualine").setup{}
-
--- Nvim Tree
-require("nvim-tree").setup()
+require("lualine").setup({})
 
 -- Options
 require("config.options")
