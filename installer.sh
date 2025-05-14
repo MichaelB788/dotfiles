@@ -129,12 +129,12 @@ function install_nvim_extras {
 }
 
 function copy_config_files {
-    cd ../config
+    cd .config/
     cp -r nvim/ ~/.config/
     cp -r Code/ ~/.config/
     cp -r kitty/ ~/.config/ 
     cp .vimrc ~/
-    cd ../scripts
+    cd ..
 }
 
 function setup_everything {
