@@ -1,0 +1,8 @@
+[
+    { "key": "ctrl+t", "command": "workbench.action.terminal.focus" }, // toggle the terminal
+
+    {
+        "key": "ctrl+t", "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    },
+]

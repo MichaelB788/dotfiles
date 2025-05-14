@@ -1,0 +1,46 @@
+{
+    "vim.useSystemClipboard": true,
+    "vim.leader": "<space>",
+
+    // Insert Mode
+    "vim.insertModeKeyBindings": [
+        { "before": [ "<C-c>" ], "after": [ "<Esc>" ] }, // Maps CTRL-C to ESC
+    ],
+
+    // Normal Mode
+    "vim.normalModeKeyBindings": [
+        { "before": [ "<leader>", "c", "p" ], "commands": [ "workbench.action.showCommands" ], "silent": true }, // Opens the command palette
+
+        // File Management
+        { "before": [ "<leader>", "w" ], "commands": [ "workbench.action.files.save" ], "silent": true }, // Save the current file
+
+        // Editor Management
+        { "before": [ "<leader>", "q", ], "commands": [ "workbench.action.closeActiveEditor" ] }, // Closes the current editor
+        { "before": [ "<leader>", "s", "p" ], "commands": [ "workbench.action.splitEditor" ] },   // Splits the editor vertically
+
+        // Editor Navigation
+        { "before": [ "w", "w" ], "commands": [ "workbench.action.navigateEditorGroups" ] },      // Cycles through the currently opened windows
+        { "before": [ "w", "l" ], "commands": [ "workbench.action.focusNextGroup" ] },            // Focuses on the window to the right
+        { "before": [ "w", "h" ], "commands": [ "workbench.action.focusPreviousGroup" ] },        // Focuses on the window to the left
+
+        { "before": [ "L" ], "commands": [ "workbench.action.nextEditorInGroup" ] },              // Focuses on the editor to the right
+        { "before": [ "H" ], "commands": [ "workbench.action.previousEditorInGroup" ] },          // Focuses on the editor to the left
+
+        // View
+        { "before": [ "<leader>", "p", "v", "m" ], "commands": [ "markdown.showPreview" ] },       // Opens a new Mardown preview
+        { "before": [ "<leader>", "o", "v"  ], "commands": [ "workbench.action.quickOpenView" ] }, // Toggle Open View
+
+        // Debugging
+        { "before": [ "<leader>", "d", "b"  ], "commands": [ "editor.debug.action.toggleBreakpoint" ] }, // Set a breakpoint on the current line
+        { "before": [ "<leader>", "d", "s"  ], "commands": [ "workbench.action.debug.start" ] },         // Starts the debugger
+        { "before": [ "<leader>", "d", "l"  ], "commands": [ "workbench.action.debug.continue" ] },      // Moves the debugger one step
+    ],
+
+    "vim.visualModeKeyBindings": [],
+    "editor.minimap.enabled": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "git.openRepositoryInParentFolders": "always",
+    "redhat.telemetry.enabled": false,
+    "editor.fontFamily": "0xProto Nerd Font Mono",
+    "workbench.colorTheme": "Abyss"
+}
