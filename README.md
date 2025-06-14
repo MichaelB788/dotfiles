@@ -43,12 +43,19 @@ and setup scripts for my development environment, tools, and terminal customizat
 
 ## 🚀 Installation
 
-> ⚠️ Make sure to back up your existing dotfiles before proceeding.
+### Dependencies
 
-This installation has been tested on Linux Mint. It should work on Debian-based
-distributions, or shells running on `bash`.
+* Latest version of Neovim
 
-> *Might* work on WSL or Mac, though I haven't tested it.
+* Lazygit
+
+Optional Dependencies: 
+
+* VSCode
+
+* gvim
+
+* kitty terminal
 
 ### Clone and Install
 
@@ -58,8 +65,22 @@ Go into a directory where you would like to clone the repo. Then execute the fol
 git clone https://github.com/MichaelB788/dotfiles.git
 ```
 
-Then, simply run the script to make your life easier.
+### Debian
+
 ```bash
-chmod +x installer.sh
+cd installers
+chmod +x debian_based_installer.sh
 ./installer.sh
 ```
+
+### Arch
+
+```bash
+cd installers
+chmod +x arch_installer.sh
+./installer.sh
+```
+
+### Other OS's
+
+Manually install [Neovim](https://github.com/neovim/neovim/wiki/Building-Neovim/688be28f98c18e73b5043879b5963287a9b13d6c) and [Lazygit](https://github.com/jesseduffield/lazygit) and copy the dotfiles into the appropriate directories.
