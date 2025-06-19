@@ -63,6 +63,7 @@ Go into a directory where you would like to clone the repo. Then execute the fol
 
 ```bash
 git clone https://github.com/MichaelB788/dotfiles.git
+cd dotfiles
 ```
 
 ### Debian
@@ -70,7 +71,7 @@ git clone https://github.com/MichaelB788/dotfiles.git
 ```bash
 cd installers
 chmod +x debian_based_installer.sh
-./installer.sh
+./debian_based_installer.sh
 ```
 
 ### Arch
@@ -78,7 +79,7 @@ chmod +x debian_based_installer.sh
 ```bash
 cd installers
 chmod +x arch_installer.sh
-./installer.sh
+./arch_installer.sh
 ```
 
 ### Other OS's
