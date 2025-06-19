@@ -93,4 +93,13 @@ function setup_everything {
 }
 
 # Installer start
-setup_everything
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    if [ "$ID_LIKE" == "debian" ]; then
+        setup_everything
+    else
+        echo "This is not a debian-based distro!"
+    fi
+else
+    echo "Cannot determine the operating system using /etc/os-release. This script may not be compatible."
+fi

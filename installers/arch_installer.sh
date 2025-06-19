@@ -44,7 +44,7 @@ function install_terminal_extras {
 
     # Lazygit to use with nvim
     if ! pacman -Qs lazygit; then
-        read -p "Lazygit already installed. Update? (y/n)" answer
+        read -p "Lazygit already installed. Update? (y/n) " answer
         case ${answer:0:1} in
             y|Y|yes|Yes|"" )
                 sudo pacman -S lazygit
@@ -60,7 +60,7 @@ function setup_everything {
     check_prerequisites
 
     if command -v nvim &>/dev/null; then
-        read -p "Neovim is already installed. Would you like to update? (y/n)" answer
+        read -p "Neovim is already installed. Would you like to update? (y/n) " answer
         case ${answer:0:1} in
             y|Y|yes|Yes|"" )
                 build_neovim_from_source
@@ -72,7 +72,7 @@ function setup_everything {
     fi
 
     if ! command -v lua &>/dev/null; then
-        read -p "Luarocks is not installed. It is not required, but recommmended. Install? (y/n)" answer
+        read -p "Luarocks is not installed. It is not required, but recommmended. Install? (y/n) " answer
         case ${answer:0:1} in
             y|Y|yes|Yes|"" )
                 install_luarocks
@@ -85,4 +85,13 @@ function setup_everything {
 }
 
 # Installer start
-setup_everything
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    if [ "$ID_LIKE" == "arch" ]; then
+        setup_everything
+    else
+        echo "This is not a arch-based distro!"
+    fi
+else
+    echo "Cannot determine the operating system using /etc/os-release. This script may not be compatible."
+fi
