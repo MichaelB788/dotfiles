@@ -2,16 +2,40 @@
 
 set -e
 
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    OS_FAMILY="${ID_LIKE:-$ID}"
+
+    case "$OS_FAMILY" in
+	*debian*) 
+	    INSTALL="sudo apt-get install -y"
+	    BUILD_PKG="build-essential"
+	    NVIM_PKGS=(ninja-build gettext cmake unzip curl)
+	;;
+	*arch*)
+	    INSTALL="sudo pacman -S --noconfirm"
+	    BUILD_PKG="base-devel"
+	    NVIM_PKGS=(base-devel cmake unzip ninja curl)
+	;;
+	*)
+	    echo "This script isn't supported with this Linux distro: $ID"
+	    exit 1
+    esac
+else
+    echo "Cannot determine the operating system using /etc/os-release. This script may not be compatible."
+    exit 1
+fi
+
 function check_prerequisites {
-    sudo apt-get install build-essential
-    if ! dpkg -l git &>/dev/null; then
-        sudo apt-get install dpkg
+    $INSTALL $BUILD_PKG
+    if ! command -v git &>/dev/null; then
+	$INSTALL git
     fi
 }
 
 function build_neovim_from_source {
     # Neovim dependencies
-    sudo apt-get install ninja-build gettext cmake unzip curl
+    $INSTALL "${NVIM_PKGS[@]}"
 
     # Neovim installation
     git clone https://github.com/neovim/neovim
@@ -45,13 +69,13 @@ function install_lazygit {
 
 function install_terminal_extras {
     # Install xclip to use with Neovim and Vim
-    if ! dpkg -l xclip &>/dev/null; then
-        sudo apt-get install xclip
+    if ! command -v xclip &>/dev/null; then
+        $INSTALL xclip
     fi
 
     # Lazygit to use with nvim
     if command -v lazygit &>/dev/null; then
-        read -p "Lazygit already installed. Update? (y/n) " answer
+        read -p "Lazygit is already installed. Would you like to update? (y/n) " answer
         case ${answer:0:1} in
             y|Y|yes|Yes|"" )
                 install_lazygit
@@ -64,7 +88,6 @@ function install_terminal_extras {
 }
 
 function setup_everything {
-    sudo apt-get update
     check_prerequisites
 
     if command -v nvim &>/dev/null; then
@@ -92,14 +115,4 @@ function setup_everything {
     install_terminal_extras
 }
 
-# Installer start
-if [ -f /etc/os-release ]; then
-    . /etc/os-release
-    if [ "$ID_LIKE" == "debian" ]; then
-        setup_everything
-    else
-        echo "This is not a debian-based distro!"
-    fi
-else
-    echo "Cannot determine the operating system using /etc/os-release. This script may not be compatible."
-fi
+setup_everything
