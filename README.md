@@ -37,8 +37,7 @@ and setup scripts for my development environment, tools, and terminal customizat
 │               └── visual-sprinkles.lua
 ├── README.md
 ├── scripts
-│   ├── arch_installer.sh
-│   └── debian_based_installer.sh
+│   └── install.sh
 └── .vimrc
 ````
 
