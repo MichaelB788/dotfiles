@@ -13,43 +13,42 @@ and setup scripts for my development environment, tools, and terminal customizat
 
 ```bash
 .
+├── .bashrc
 ├── .config
-│   ├── Code    # VSCode with Vim keybindings
+│   ├── Code
 │   │   └── User
-│   │       ├── keybindings.json
-│   │       └── settings.json
+│   │       └── keybindings.json
 │   ├── kitty
 │   │   └── kitty.conf
-│   ├── nvim    # Neovim config
-│   │   ├── init.lua
-│   │   ├── lazy-lock.json
-│   │   ├── lua
-│   │   │   ├── config
-│   │   │   │   ├── keymaps.lua
-│   │   │   │   ├── lazy.lua
-│   │   │   │   └── options.lua
-│   │   │   └── plugins
-│   │   │       ├── code.lua
-│   │   │       ├── git.lua
-│   │   │       ├── lsp.lua
-│   │   │       ├── markdown.lua
-│   │   │       ├── navigation.lua
-│   │   │       └── visual-sprinkles.lua
-│   │   └── .neoconf.json
-│   └── .vimrc
-├── installer.sh # Installer to bootstrap installation
-└── README.md    # The thing you're reading from
+│   └── nvim
+│       ├── init.lua
+│       ├── lazy-lock.json
+│       └── lua
+│           ├── config
+│           │   ├── keymaps.lua
+│           │   ├── lazy.lua
+│           │   └── options.lua
+│           └── plugins
+│               ├── code.lua
+│               ├── git.lua
+│               ├── lsp.lua
+│               ├── markdown.lua
+│               ├── navigation.lua
+│               └── visual-sprinkles.lua
+├── README.md
+├── scripts
+│   ├── arch_installer.sh
+│   └── debian_based_installer.sh
+└── .vimrc
 ````
 
-## 🚀 Installation
+## Dependencies
 
-### Dependencies
+* git
 
 * Latest version of Neovim
 
 * Lazygit
-
-Optional Dependencies: 
 
 * VSCode
 
@@ -57,31 +56,55 @@ Optional Dependencies:
 
 * kitty terminal
 
-### Clone and Install
+## Quick Install - Linux
 
-Go into a directory where you would like to clone the repo. Then execute the following:
+Open up the terminal and copy and paste the following command:
 
-```bash
-git clone https://github.com/MichaelB788/dotfiles.git
-cd dotfiles
+```
+git clone https://gist.github.com/8dedebc8108226650b62d7533b00b522.git helper_script
 ```
 
-### Debian
+This will clone a snippet of code under a directory labeled `helper_script` that will make cloning the bare
+repository a lot easier.
 
-```bash
-cd installers
-chmod +x debian_based_installer.sh
-./debian_based_installer.sh
+Run the bash script included in the GitHub Gist with the following:
+
+```
+cd helper_script
+chmod +x clone.sh
+./clone.sh
 ```
 
-### Arch
+The script will have copied all dotfiles into their appropriate locations. Should there be any 
+conflicts between existing files or directories, the previous files will be placed under `~/.config-backup`
 
-```bash
-cd installers
-chmod +x arch_installer.sh
-./arch_installer.sh
+## Neovim Bootstrap
+
+> NOTE: The following script has only been tested on Debian and Arch based systems. This script will not run on any other distro normally.
+
+After running the above commands to copy the config over to your machine, there should be a directory labeled `scripts/` 
+that contains another bash file that can bootstrap the installation and setup of Neovim.
+
+From the home directory, execute the following:
+
+```
+cd scripts
+chmod +x clone.sh
+./clone.sh
 ```
 
-### Other OS's
+## Non-Linux Systems (MacOS / Windows)
 
-Manually install [Neovim](https://github.com/neovim/neovim/wiki/Building-Neovim/688be28f98c18e73b5043879b5963287a9b13d6c) and [Lazygit](https://github.com/jesseduffield/lazygit) and copy the dotfiles into the appropriate directories.
+On Windows, you have the option of installing [WSL](https://learn.microsoft.com/en-us/windows/wsl/install). I recommend installing Ubuntu, running
+the Neovim bootstrap script should work out of the box.
+
+Otherwise, you would need to manually install [Neovim](https://github.com/neovim/neovim/wiki/Building-Neovim/688be28f98c18e73b5043879b5963287a9b13d6c) and [Lazygit](https://github.com/jesseduffield/lazygit) and copy the dotfiles into the appropriate directories.
+for your system.
+
+After that, clone this repository normally:
+
+```
+https://github.com/MichaelB788/dotfiles.git
+```
+
+And copy the dotfiles into their appropriate directories.
