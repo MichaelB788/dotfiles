@@ -57,39 +57,31 @@ and setup scripts for my development environment, tools, and terminal customizat
 
 ## Quick Install - Linux
 
-Open up the terminal and copy and paste the following command:
+To automate the setup, you can use this [Github Gist snippet](https://gist.github.com/8dedebc8108226650b62d7533b00b522.git) to clone these dotfiles as a bare repository 
+without conflicting any existing dotfiles.
+
+Simply open up the terminal and enter the following:
 
 ```
 git clone https://gist.github.com/8dedebc8108226650b62d7533b00b522.git helper_script
+chmod +x helper_script/clone.sh
+./helper_script/clone.sh
 ```
 
-This will clone a snippet of code under a directory labeled `helper_script` that will make cloning the bare
-repository a lot easier.
+Pre-existing dotfiles which conflict with the new ones will be placed under `~/.config-backup`
 
-Run the bash script included in the GitHub Gist with the following:
+## Quick Install - Neovim Setup
 
-```
-cd helper_script
-chmod +x clone.sh
-./clone.sh
-```
+> NOTE: This script will only run on Debian and Arch based systems, however it should be easy to configure it to work on any Linux based system.
 
-The script will have copied all dotfiles into their appropriate locations. Should there be any 
-conflicts between existing files or directories, the previous files will be placed under `~/.config-backup`
-
-## Neovim Bootstrap
-
-> NOTE: The following script has only been tested on Debian and Arch based systems. This script will not run on any other distro normally.
-
-After running the above commands to copy the config over to your machine, there should be a directory labeled `scripts/` 
+After running the above commands to copy the config over to your machine, there should be a directory labeled `scripts/` under the home directory 
 that contains another bash file that can bootstrap the installation and setup of Neovim.
 
 From the home directory, execute the following:
 
 ```
-cd scripts
-chmod +x clone.sh
-./clone.sh
+chmod +x scripts/bootstrap-neovim.sh
+./scripts/bootstrap-neovim.sh
 ```
 
 ## Non-Linux Systems (MacOS / Windows)
@@ -103,7 +95,7 @@ for your system.
 After that, clone this repository normally:
 
 ```
-https://github.com/MichaelB788/dotfiles.git
+git clone https://github.com/MichaelB788/dotfiles.git
 ```
 
 And copy the dotfiles into their appropriate directories.
