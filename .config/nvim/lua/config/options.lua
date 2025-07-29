@@ -9,7 +9,7 @@ o.autochdir     = true
 -- tabs & indent
 o.tabstop       = 2
 o.shiftwidth    = 2
-o.expandtab     = true
+o.expandtab     = false
 o.autoindent    = true
 
 -- line numbers
