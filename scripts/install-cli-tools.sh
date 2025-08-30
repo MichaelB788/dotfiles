@@ -2,29 +2,27 @@
 
 set -e
 
+# This script installs Neovim, Lazygit, and luarocks
+
 set_os_specific_globals() {
 	if [ -f /etc/os-release ]; then
 		. /etc/os-release
 		OS_FAMILY="${ID_LIKE:-$ID}"
-
 		case "$OS_FAMILY" in
 			*debian*) 
 				INSTALL="sudo apt-get install -y"
 				DEV_TOOLS="build-essential"
 				NVIM_PKGS=(ninja-build gettext cmake unzip curl)
-				CLANG="clangd-12"
 				;;
 			*arch*)
 				INSTALL="sudo pacman -S --noconfirm"
 				DEV_TOOLS="base-devel"
 				NVIM_PKGS=(cmake unzip ninja curl)
-				CLANG="clang"
 				;;
 			*fedora*)
 				INSTALL="sudo dnf install -y"
 				DEV_TOOLS="@development-tools"
 				NVIM_PKGS=(ninja-build cmake gcc make unzip gettext curl)
-				CLANG="clangd"
 				;;
 			*)
 				echo "This script isn't supported with this Linux distro: $ID"
@@ -38,63 +36,26 @@ set_os_specific_globals() {
 }
 
 install_dependencies() {
-	read -p "Install/update dependencies? (y/n) " answer
-	case ${answer:0:1} in
-		y|Y|yes|Yes|"" )
-			$INSTALL $DEV_TOOLS
-			$INSTALL git
-			$INSTALL npm
-			$INSTALL python-pipx
-			$INSTALL uv
-			;;
-		* ) ;;
-	esac
+	$INSTALL $DEV_TOOLS
+	$INSTALL git
 }
 
 install_neovim() {
-	read -p "Install/update Neovim? (y/n) " answer
-	case ${answer:0:1} in
-		y|Y|yes|Yes|"" )
-			$INSTALL "${NVIM_PKGS[@]}"
-			git clone https://github.com/neovim/neovim
-			cd neovim
-			git checkout stable # Remove or comment out this line for the nightly build
-			make CMAKE_BUILD_TYPE=Release
-			sudo make install
-			cd ..
-			rm -rf neovim
-			;;
-		* ) ;;
-	esac
+	$INSTALL "${NVIM_PKGS[@]}"
+	git clone https://github.com/neovim/neovim
+	cd neovim
+	make CMAKE_BUILD_TYPE=Release
+	sudo make install
+	cd ..
+	rm -rf neovim
 }
 
 install_lazygit() {
-	read -p "Install/update lazygit? (y/n) " answer
-	case ${answer:0:1} in
-		y|Y|yes|Yes|"" )
-			LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
-			curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
-			tar xf lazygit.tar.gz lazygit
-			sudo install lazygit -D -t /usr/local/bin/
-			rm lazygit*
-			;;
-		* ) ;;
-	esac
-}
-
-install_lsp() {
-	read -p "Install/update Neovim LSP's? (y/n) " answer
-	case ${answer:0:1} in
-		y|Y|yes|Yes|"" )
-			git clone https://github.com/neovim/nvim-lspconfig ~/.config/nvim/pack/nvim/start/nvim-lspconfig
-			$INSTALL $CLANG
-			pipx install basedpyright
-			pipx ensurepath
-			sudo npm i -g bash-language-server
-			sudo npm i -g @olrtg/emmet-language-server
-			;;
-			* ) ;;
-	esac
+	LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
+	curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+	tar xf lazygit.tar.gz lazygit
+	sudo install lazygit -D -t /usr/local/bin/
+	rm lazygit*
 }
 
 main() {
@@ -102,7 +63,7 @@ main() {
 	install_dependencies
 	install_neovim
 	install_lazygit
-	install_lsp
+	$INSTALL luarocks
 }
 
 main
