@@ -1,53 +1,11 @@
 return {
-  -- Treesitter/Parser
+	-- Treesitter
   {
-    "nvim-treesitter/nvim-treesitter",
-    build = function()
-      require("nvim-treesitter.install").update(
-        {
-          with_sync = true
-        }
-      )()
-    end,
-
-    opts = {
-      ensure_installed = {
-        "c",
-        "c_sharp",
-        "cpp",
-        "bash",
-        "diff",
-        "html",
-        "javascript",
-        "jsdoc",
-        "json",
-        "jsonc",
-        "lua",
-        "luadoc",
-        "luap",
-        "markdown",
-        "markdown_inline",
-        "printf",
-        "python",
-        "query",
-        "regex",
-        "rust",
-        "toml",
-        "tsx",
-        "typescript",
-        "vim",
-        "vimdoc",
-        "xml",
-        "yaml",
-      },
-
-      auto_install = true,
-
-      highlight = { enable = true, },
-
-      indent = { enable = true, },
-    }
-  },
+		"nvim-treesitter/nvim-treesitter",
+		branch = 'master',
+		lazy = false,
+		build = ":TSUpdate"
+	},
 
   -- catppuccin / colorscheme
   {

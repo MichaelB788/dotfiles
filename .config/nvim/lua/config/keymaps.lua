@@ -1,29 +1,28 @@
--- For help on key notation, type :h key-notation
--- Globals
-vim.g.mapleader = " " -- Map leader
+vim.g.mapleader = ' '
 local km = vim.keymap
 
-km.set("n", "<leader>w", "<cmd>w<CR>")
-km.set("n", "<leader>q", "<cmd>q!<CR>")
+-- File manipulation
+km.set('n', '<C-s>', '<cmd>wa<CR>', { desc = 'Save file'} )
+km.set('n', '<leader>q', '<cmd>q!<CR>', { desc = 'Close file'} )
+km.set('v', 'y', '"+y', { desc = 'Yank to system clipboard' })
+km.set('n', 'yy', '"+yy', { desc = 'Yank line to system clipboard' })
 
--- Window/Tab management
-km.set("n", "<leader>tn", "<cmd>tabnew<CR>") -- Open a new tab
-km.set("n", "<leader>sp", "<cmd>vsplit<CR>") -- Perform vertical split
+-- Tab manipulation
+km.set('n', '<leader>tn', '<cmd>tabnew<CR>', { desc = 'Open new tab' })
+km.set('n', '<leader>sp', '<cmd>vsplit<CR>', { desc = 'Vertical split' })
 
--- Navigation
-km.set("n", "w", "<C-w>")  										-- Pretense to window navigation
-km.set("n", "<S-l>", "gt") 										-- Go to next tab
-km.set("n", "<S-h>", "gT") 										-- Go to prev tab
-km.set('n', 'gD', vim.lsp.buf.declaration)		-- Go to declaration
-km.set('n', 'gd', vim.lsp.buf.definition)			-- Go to definition
-km.set('n', 'gi', vim.lsp.buf.implementation)	-- Go to implementation
-km.set('n', 'gr', vim.lsp.buf.references)			-- Go to references
+-- General Navigation
+km.set('n', 'w', '<C-w>', { desc = 'Window navigation prefix' })
+km.set('n', '<S-l>', 'gt', { desc = 'Go to next tab' })
+km.set('n', '<S-h>', 'gT', { desc = 'Go to previous tab' })
+km.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' })
+km.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
+km.set('n', 'gi', vim.lsp.buf.implementation, { desc = 'Go to implementation' })
+km.set('n', 'gr', vim.lsp.buf.references, { desc = 'Go to references' })
 
--- Code
-km.set('n', 'K', vim.lsp.buf.hover)															-- Toggle Hover
-km.set('n', '<C-k>', vim.lsp.buf.signature_help)								-- Show signature
-km.set('n', '<leader>aw', vim.lsp.buf.add_workspace_folder)			-- Add a workspace folder
-km.set('n', '<leader>rw', vim.lsp.buf.remove_workspace_folder)	-- Remove a workspace folder
-km.set('n', '<leader>td', vim.lsp.buf.type_definition)					-- Find the type definition 
-km.set('n', '<leader>rn', vim.lsp.buf.rename)										-- Rename a token
-km.set('n', '<leader>ca', vim.lsp.buf.code_action)							-- List code actions
+-- LSP Tools
+km.set('n', 'K', vim.lsp.buf.hover, { desc = 'Show hover information' })
+km.set('n', '<C-k>', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
+km.set('n', '<leader>td', vim.lsp.buf.type_definition, { desc = 'Go to type definition' })
+km.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename symbol' })
+km.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Show code actions' })

@@ -24,9 +24,6 @@ return {
 		config = function()
 			vim.lsp.enable({
 				"clangd",
-				"basedpyright",
-				"bashls",
-				"emmet_language_server"
 			})
 		end,
 	},
