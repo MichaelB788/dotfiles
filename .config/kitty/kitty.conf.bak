@@ -2676,8 +2676,8 @@ single_window_padding_width     0
 window_margin_width             5
 window_padding_width            0
 draw_minimal_borders            yes
-# active_border_color             #66FF00
-# inactive_border_color           #000000
+active_border_color             #66FF00
+inactive_border_color           #000000
 
 # Font
 font_family      0xProto Nerd Font
@@ -2695,9 +2695,3 @@ map ctrl+w close_window
 
 # Tab bar
 map ctrl+n new_tab_with_cwd
-
-
-# BEGIN_KITTY_THEME
-# Catppuccin-Mocha
-include current-theme.conf
-# END_KITTY_THEME

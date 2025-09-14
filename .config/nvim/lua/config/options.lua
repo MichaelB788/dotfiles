@@ -1,7 +1,7 @@
 local o = vim.o
 
 vim.diagnostic.config({virtual_text = true}) -- Enables diagnostics to appear next to code
-vim.cmd.colorscheme "catppuccin"             -- Colorscheme
+vim.cmd.colorscheme "catppuccin-mocha"
 
 -- Changes working directory to the directory opened in nvim
 o.autochdir     = true

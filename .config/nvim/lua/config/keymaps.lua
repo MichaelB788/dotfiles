@@ -4,6 +4,8 @@ local km = vim.keymap
 -- File manipulation
 km.set('n', '<C-s>', '<cmd>wa<CR>', { desc = 'Save file'} )
 km.set('n', '<leader>q', '<cmd>q!<CR>', { desc = 'Close file'} )
+
+km.set('n', 'p', '"+p', { desc = 'Paste content from system clipboard' })
 km.set('v', 'y', '"+y', { desc = 'Yank to system clipboard' })
 km.set('n', 'yy', '"+yy', { desc = 'Yank line to system clipboard' })
 
