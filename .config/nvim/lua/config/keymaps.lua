@@ -8,6 +8,8 @@ km.set('n', '<leader>q', '<cmd>q!<CR>', { desc = 'Close file'} )
 km.set('n', 'p', '"+p', { desc = 'Paste content from system clipboard' })
 km.set('v', 'y', '"+y', { desc = 'Yank to system clipboard' })
 km.set('n', 'yy', '"+yy', { desc = 'Yank line to system clipboard' })
+km.set('v', 'd', '"+d', { desc = 'Cut to system clipboard' })
+km.set('n', 'dd', '"+dd', { desc = 'Cut line to system clipboard' })
 
 -- Tab manipulation
 km.set('n', '<leader>tn', '<cmd>tabnew<CR>', { desc = 'Open new tab' })
