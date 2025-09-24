@@ -16,7 +16,6 @@ km.set('n', '<leader>tn', '<cmd>tabnew<CR>', { desc = 'Open new tab' })
 km.set('n', '<leader>sp', '<cmd>vsplit<CR>', { desc = 'Vertical split' })
 
 -- General Navigation
-km.set('n', 'w', '<C-w>', { desc = 'Window navigation prefix' })
 km.set('n', '<S-l>', 'gt', { desc = 'Go to next tab' })
 km.set('n', '<S-h>', 'gT', { desc = 'Go to previous tab' })
 km.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' })

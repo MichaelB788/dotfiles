@@ -13,7 +13,8 @@ o.expandtab     = false
 o.autoindent    = true
 
 -- line numbers
-o.number        = true
+o.number         = true
+o.relativenumber = true
 
 -- line wrapping
 o.wrap          = false

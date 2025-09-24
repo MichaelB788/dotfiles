@@ -27,5 +27,12 @@ return {
 		---@module 'render-markdown'
 		---@type render.md.UserConfig
 		opts = {},
+	},
+
+	-- Configurable Markdown QOL
+	{
+		"tadmccorkle/markdown.nvim",
+		ft = "markdown", -- or 'event = "VeryLazy"'
+		opts = { { } }
 	}
 }
