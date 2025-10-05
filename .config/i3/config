@@ -305,7 +305,8 @@ bindsym $mod+p exec --no-startup-id ~/.config/i3/scripts/audio-device-switch
 ## App shortcuts
 bindsym $mod+w exec --no-startup-id /usr/bin/firefox
 bindsym $mod+n exec --no-startup-id /usr/bin/thunar
-bindsym Print exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
+bindsym Print exec --no-startup-id gnome-screenshot && notify-send "Screenshot saved to ~/Pictures/$(date +"%Y-%m-%d-%T")-screenshot.png"
+bindsym Shift+Print exec --no-startup-id gnome-screenshot -acf /tmp/test && cat /tmp/test | xclip -i -selection clipboard -target image/png && notify-send "Screenshot copied"
 
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/power-profiles
@@ -374,8 +375,8 @@ set $ws10 "10"
 # For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/picom.conf
 # install picom package (yay -S picom)
 # start using default config
-#exec_always --no-startup-id picom -b
-#
+exec_always --no-startup-id picom -b
+
 # for custom config:
 #exec_always --no-startup-id picom --config  ~/.config/picom.conf
 
@@ -412,7 +413,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-exec --no-startup-id sleep 1 && feh --bg-fill /home/migdez/Downloads/images/gameboy.jpg
+exec --no-startup-id sleep 1 && feh --bg-fill ~/Downloads/images/gameboy.jpg
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 0 600
