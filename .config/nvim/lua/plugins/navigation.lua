@@ -57,9 +57,25 @@ return {
 		dependencies = { 'nvim-lua/plenary.nvim' },
 		config = function()
 			local builtin = require('telescope.builtin')
-			vim.keymap.set('n', '<leader>ff', builtin.git_files, { desc = 'Telescope find git files' })
-			vim.keymap.set('n', '<leader>fd', builtin.find_files, { desc = 'Telescope find files in working directory' })
-			vim.keymap.set('n', '<leader>fs', builtin.grep_string, { desc = 'Telescope live grep' })
+			local actions = require('telescope.actions')
+
+			-- Configure Telescope with custom mappings
+			require('telescope').setup({
+				defaults = {
+					mappings = {
+						i = {
+							['Enter'] = actions.file_tab,  -- Ctrl+t to open in new tab
+						},
+						n = {
+							['Enter'] = actions.file_tab,  -- Ctrl+t in normal mode too
+						},
+					},
+				},
+			})
+
+			vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files in working directory' })
+			vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = 'Telescope find git files' })
+			vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = 'Telescope find word' })
 		end,
 	},
 }
