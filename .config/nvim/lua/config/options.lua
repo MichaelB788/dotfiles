@@ -4,7 +4,7 @@ vim.diagnostic.config({virtual_text = true}) -- Enables diagnostics to appear ne
 vim.cmd.colorscheme "catppuccin-mocha"
 
 -- Changes working directory to the directory opened in nvim
-o.autochdir     = true
+-- o.autochdir     = true
 
 -- tabs & indent
 o.tabstop       = 2
