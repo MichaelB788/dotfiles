@@ -17,8 +17,8 @@ o.number         = true
 o.relativenumber = true
 
 -- line wrapping
-o.wrap          = true
-o.linebreak			= true
+o.wrap          = false
+o.linebreak			= false
 
 -- appearance
 o.termguicolors = true
