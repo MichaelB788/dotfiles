@@ -11,12 +11,6 @@
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
 
-  // open a terminal
-  {
-    "key": "ctrl-t",
-    "command": "workbench.action.terminal.toggleTerminal"
-  },
-
   // windows (not the microsoft kind)
   {
     "key": "space s v",
@@ -53,12 +47,12 @@
 
   // tab nav
   {
-    "key": "ctrl-shift-l",
+    "key": "shift-l",
     "command": "workbench.action.nextEditor",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
-    "key": "ctrl-shift-h",
+    "key": "shift-h",
     "command": "workbench.action.previousEditor",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
@@ -98,7 +92,12 @@
     "command": "workbench.action.toggleSidebarVisibility"
   },
 
-  // Coding
+  // lsp nav
+  {
+    "key": "space g d",
+    "command": "editor.action.revealDefinition",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
   {
     "key": "space c a",
     "command": "editor.action.codeAction",
@@ -119,11 +118,8 @@
     "command": "workbench.action.quickOpen",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
-  {
-    "key": "space g d",
-    "command": "editor.action.revealDefinition",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
+
+  // Git
   {
     "key": "space g g",
     "command": "runCommands",
@@ -140,6 +136,7 @@
     "command": "editor.action.addSelectionToNextFindMatch",
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
   },
+
   // File Explorer
   {
     "key": "r",
@@ -198,6 +195,7 @@
     "command": "list.toggleExpand",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && explorerResourceIsFolder && !inputFocus"
   },
+
   // Debug
   {
     "key": "space d a",
