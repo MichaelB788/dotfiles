@@ -1,5 +1,7 @@
 local o = vim.o
 
+vim.g.autoformat = false
+
 -- Changes working directory to the directory opened in nvim
 -- o.autochdir     = true
 
