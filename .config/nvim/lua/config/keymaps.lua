@@ -17,6 +17,12 @@ km.set('n', '<leader>tn', '<cmd>tabnew<CR>', { desc = 'Open new tab' })
 km.set('n', '<leader>sv', '<cmd>vsp<CR>', { desc = 'Split window vertically' })
 km.set('n', '<leader>sh', '<cmd>sp<CR>', { desc = 'Split window horizontally' })
 
+km.set("n", "=", '<cmd>vertical resize +5<cr>')
+km.set("n", "-", '<cmd>vertical resize -5<cr>')
+km.set("n", "+", '<cmd>horizontal resize +2<cr>')
+km.set("n", "_", '<cmd>horizontal resize -2<cr>')
+
+
 -- window nav
 km.set('n', '<leader>wh', '<C-w>h', { desc = 'Move to left window' })
 km.set('n', '<leader>wj', '<C-w>j', { desc = 'Move to window below' })
@@ -39,3 +45,19 @@ km.set('n', '<C-k>', vim.lsp.buf.signature_help, { desc = 'Show signature help' 
 km.set('n', '<leader>td', vim.lsp.buf.type_definition, { desc = 'Go to type definition' })
 km.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename symbol' })
 km.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Show code actions' })
+
+-- nvim.dap
+local dap = require('dap')
+km.set('n', '<F5>', dap.continue, { desc = 'DAP: Continue' })
+km.set('n', '<F6>', dap.step_over, { desc = 'DAP: Step Over' })
+km.set('n', '<F7>', dap.step_into, { desc = 'DAP: Step Into' })
+km.set('n', '<F8>', dap.step_out, { desc = 'DAP: Step Out' })
+km.set('n', '<Leader>b', dap.toggle_breakpoint, { desc = 'DAP: Toggle Breakpoint' })
+km.set('n', '<Leader>B', function()
+    dap.set_breakpoint(vim.fn.input('Breakpoint condition: '))
+end, { desc = 'DAP: Set Conditional Breakpoint' })
+km.set('n', '<Leader>lp', function()
+    dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))
+end, { desc = 'DAP: Set Log Point' })
+km.set('n', '<Leader>dr', dap.repl.open, { desc = 'DAP: Open REPL' })
+km.set('n', '<Leader>dl', dap.run_last, { desc = 'DAP: Run Last Configuration' })
