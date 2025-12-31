@@ -1,0 +1,82 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+" Source your .vimrc
+source ~/.vimrc
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Relative line numbers
+set relativenumber
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+" Set leader key
+let mapleader = " "
+
+" Write and quit
+nnoremap <C-s> :wa<CR>
+nnoremap <leader>q :q!<CR>
+
+" System clipboard
+nnoremap p "+p
+vnoremap y "+y
+nnoremap yy "+yy
+vnoremap d "+d
+nnoremap dd "+dd
+
+" Windows (not the Microsoft kind)
+nnoremap <leader>tn :tabnew<CR>
+nnoremap <leader>sv :vsp<CR>
+nnoremap <leader>sh :sp<CR>
+nnoremap = :vertical resize +5<CR>
+nnoremap - :vertical resize -5<CR>
+nnoremap + :horizontal resize +2<CR>
+nnoremap _ :horizontal resize -2<CR>
+
+" Window navigation
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wl <C-w>l
+
+" Tab navigation
+nnoremap <S-l> gt
+nnoremap <S-h> gT
+
+" LSP navigation (using IdeaVim actions)
+nnoremap gD :action GotoDeclaration<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gr :action FindUsages<CR>
+
+" LSP tools (using IdeaVim actions)
+nnoremap K :action QuickJavaDoc<CR>
+nnoremap <C-k> :action ParameterInfo<CR>
+nnoremap <leader>td :action GotoTypeDeclaration<CR>
+nnoremap <leader>rn :action RenameElement<CR>
+nnoremap <leader>ca :action ShowIntentionActions<CR>
+
+" Debugging (using IdeaVim actions)
+nnoremap <F5> :action Resume<CR>
+nnoremap <F6> :action StepOver<CR>
+nnoremap <F7> :action StepInto<CR>
+nnoremap <F8> :action StepOut<CR>
+nnoremap <leader>b :action ToggleLineBreakpoint<CR>
+nnoremap <leader>dr :action ActivateDebugToolWindow<CR>
