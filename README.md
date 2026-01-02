@@ -17,14 +17,13 @@ with any config files.
 
 ## Optional Step 2: Install CLI Tools
 
-From the home directory, execute the following:
+Under the `scripts/` directory, you may find a file named `install-cli-tools.sh`.
 
-```
-chmod +x scripts/install-cli-tools.sh
-./scripts/install-cli-tools.sh
-```
+Make it an exe and run it with a flag:
 
-This installs most of the CLI tools I use.
+- `--eos` -> EndeavorOS (Arch could also work, you just need `yay` installed)
+- `--fedora` -> self-explanatory
+- `deb` -> Debian, or any of its 20 derivatives
 
 ## Non-Linux Systems (MacOS / Windows)
 
