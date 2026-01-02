@@ -28,5 +28,6 @@ This installs most of the CLI tools I use.
 
 ## Non-Linux Systems (MacOS / Windows)
 
-Use Windows WSL or perish. I do not own a Mac so I don't know how the script would work there but I can't
-imagine it'd be that difficult to make it work.
+Use Windows WSL or perish.
+
+As for MacOS, idk I don't own a Mac.
