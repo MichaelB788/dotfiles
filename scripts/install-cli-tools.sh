@@ -1,84 +1,100 @@
 #!/bin/bash
-
 set -e
 
-# This script installs Neovim, Lazygit, and luarocks
+# See https://neovim.io/doc2/install/ for methods of installing neovim and neovim nightly
 
-set_os_specific_globals() {
-	if [ -f /etc/os-release ]; then
-		. /etc/os-release
-		OS_FAMILY="${ID_LIKE:-$ID}"
-		case "$OS_FAMILY" in
-			*debian*) 
-				INSTALL="sudo apt-get install -y"
-				DEV_TOOLS="build-essential"
-				NVIM_PKGS=(ninja-build gettext cmake unzip curl)
-				;;
-			*arch*)
-				INSTALL="sudo pacman -S --noconfirm"
-				DEV_TOOLS="base-devel"
-				NVIM_PKGS=(cmake unzip ninja curl)
-				;;
-			*fedora*)
-				INSTALL="sudo dnf install -y"
-				DEV_TOOLS="@development-tools"
-				NVIM_PKGS=(ninja-build cmake gcc make unzip gettext curl)
-				;;
-			*)
-				echo "This script isn't supported with this Linux distro: $ID"
-				echo "Consider modifying the set_os_specific_settings to add compatibility to your machine"
-				exit 1
+eos_setup() {
+	sudo pacman -Syu
+
+	sudo pacman -S kitty
+
+	yay -S neovim-nightly-bin
+
+	sudo pacman -S lazygit
+
+	yay -S jet-brains-toolbox
+
+	# Source - https://stackoverflow.com/a/226724
+	# Posted by Myrddin Emrys, modified by community. See post 'Timeline' for change history
+	# Retrieved 2025-12-30, License - CC BY-SA 4.0
+	echo "Do you wish to install EndeavourOS's flavor of sway?"
+	select strictreply in "Yes" "No"; do
+		relaxedreply=${strictreply:-$REPLY}
+		case $relaxedreply in
+		Yes | yes | y)
+			git clone https://github.com/EndeavourOS-Community-Editions/sway.git
+			cd sway
+			sudo ./sway-install.sh
+			break
+			;;
+		No | no | n) exit ;;
 		esac
-	else
-		echo "Cannot determine the operating system using /etc/os-release. This script may not be compatible."
-		exit 1
-	fi
+	done
 }
 
-install_dependencies() {
-	$INSTALL $DEV_TOOLS
-	$INSTALL git
+fedora_setup() {
+	sudo dnf update -y
+
+	sudo dnf kitty
+
+	sudo dnf copr enable agriffis/neovim-nightly
+	sudo dnf install -y neovim python3-neovim
+
+	sudo dnf copr enable dejan/lazygit
+	sudo dnf install -y lazygit
+
+	echo "Do you wish to install Fedora's flavor of sway?"
+	select strictreply in "Yes" "No"; do
+		relaxedreply=${strictreply:-$REPLY}
+		case $relaxedreply in
+		Yes | yes | y)
+			sudo dnf install sway sway-config-fedora
+			break
+			;;
+		No | no | n) exit ;;
+		esac
+	done
 }
 
-install_neovim() {
-	$INSTALL "${NVIM_PKGS[@]}"
-	git clone https://github.com/neovim/neovim
-	cd neovim
-	make CMAKE_BUILD_TYPE=Release
-	sudo make install
-	cd ..
-	rm -rf neovim
+debian_setup() {
+	sudo apt-get update && sudo apt-get upgrade
+
+	sudo apt-get install kitty
+
+	sudo add-apt-repository ppa:neovim-ppa/unstable
+	sudo apt update
+	sudo apt-get install neovim
+
+	sudo apt-get install lazygit
+
+	echo "Do you wish to install sway?"
+	select strictreply in "Yes" "No"; do
+		relaxedreply=${strictreply:-$REPLY}
+		case $relaxedreply in
+		Yes | yes | y)
+			sudo apt-get install sway
+			break
+			;;
+		No | no | n) exit ;;
+		esac
+	done
 }
 
-install_lazygit() {
-	LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
-	curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
-	tar xf lazygit.tar.gz lazygit
-	sudo install lazygit -D -t /usr/local/bin/
-	rm lazygit*
-}
-
-install_kitty() {
-	curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-	mkdir -p ~/.local/bin/
-	mkdir -p ~/.local/share/applications/
-
-	# desktop integreation
-	ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
-	cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
-	cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
-	sed -i "s|Icon=kitty|Icon=$(readlink -f ~)/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
-	sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
-	echo 'kitty.desktop' > ~/.config/xdg-terminals.list
-}
-
-main() {
-	set_os_specific_globals
-	install_dependencies
-	install_neovim
-	install_lazygit
-	$INSTALL luarocks
-	install_kitty
-}
-
-main
+case "${1}" in
+--eos)
+	eos_setup
+	;;
+--fedora)
+	fedora_setup
+	;;
+--deb)
+	debian_setup
+	;;
+'' | *)
+	echo "Usage: ./install-cli-tools.sh <flag>"
+	echo "Flags:"
+	echo "--eos -> EndeavourOS"
+	echo "--fedora -> Fedora"
+	echo "--deb -> Debian, Ubuntu, or any other derivative"
+	;;
+esac

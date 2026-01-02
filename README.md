@@ -1,11 +1,10 @@
 # Quick Install
 
-## Part 1: Copy the headless repo
+## Step 1: Copy the headless repo
 
-To automate the setup, you can use this [Github Gist snippet](https://gist.github.com/8dedebc8108226650b62d7533b00b522.git) to clone these dotfiles as a bare repository 
-without conflicting any existing dotfiles.
+[Link to the Github Gist snippet](https://gist.github.com/8dedebc8108226650b62d7533b00b522.git)
 
-Simply open up the terminal and enter the following:
+Execute the following
 
 ```bash
 git clone https://gist.github.com/8dedebc8108226650b62d7533b00b522.git helper_script
@@ -13,14 +12,10 @@ chmod +x helper_script/clone.sh
 ./helper_script/clone.sh
 ```
 
-Pre-existing dotfiles which conflict with the new ones will be placed under `~/.config-backup`
+A folder named `~/.config-backup` will be created. Original files will be placed there, given that they conflict
+with any config files.
 
-## Part 2: Setup Neovim and other dependencies
-
-> NOTE: This script will only run on Debian and Arch based systems, however it should be easy to configure it to work on any Linux based system.
-
-After running the above commands to copy the config over to your machine, there should be a directory labeled `scripts/` under the home directory 
-that contains another bash file that can bootstrap the installation and setup of Neovim.
+## Optional Step 2: Install CLI Tools
 
 From the home directory, execute the following:
 
@@ -29,22 +24,9 @@ chmod +x scripts/install-cli-tools.sh
 ./scripts/install-cli-tools.sh
 ```
 
-This will install Neovim nightly, along with my other tools such as Lazygit and luarocks (for installing neorg).
+This installs most of the CLI tools I use.
 
 ## Non-Linux Systems (MacOS / Windows)
 
-**If you are on Windows use WSL**. Don't bother using Powershell unless you hate your life.
-
-I believe MacOS should be compatible with the shell scripts but I cannot be bothered to test.
-
-In any case, manually installing [Neovim](https://github.com/neovim/neovim/wiki/Building-Neovim/688be28f98c18e73b5043879b5963287a9b13d6c) and [Lazygit](https://github.com/jesseduffield/lazygit) and copy the dotfiles into the appropriate directories.
-should do everything the shell scripts do. After that, clone this repository normally:
-
-```bash
-git clone https://github.com/MichaelB788/dotfiles.git
-```
-
-And copy the dotfiles into their appropriate directories.
-
-For Windows, Neovim config files are usually under `C:/User/<username>/AppData/Local/nvim`. If you don't see the `nvim`
-folder, just make a new one and put the config files in there.
+Use Windows WSL or perish. I do not own a Mac so I don't know how the script would work there but I can't
+imagine it'd be that difficult to make it work.
