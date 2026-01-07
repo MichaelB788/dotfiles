@@ -6,6 +6,8 @@ set -e
 eos_setup() {
 	sudo pacman -Syu
 
+  sudo pacman -S fzf
+
 	sudo pacman -S kitty
 
 	yay -S neovim-nightly-bin
@@ -35,6 +37,8 @@ eos_setup() {
 fedora_setup() {
 	sudo dnf update -y
 
+  sudo dnf install fzf
+
 	sudo dnf kitty
 
 	sudo dnf copr enable agriffis/neovim-nightly
@@ -59,6 +63,8 @@ fedora_setup() {
 debian_setup() {
 	sudo apt-get update && sudo apt-get upgrade
 
+  sudo apt-get install fzf
+
 	sudo apt-get install kitty
 
 	sudo add-apt-repository ppa:neovim-ppa/unstable
@@ -81,15 +87,9 @@ debian_setup() {
 }
 
 case "${1}" in
---eos)
-	eos_setup
-	;;
---fedora)
-	fedora_setup
-	;;
---deb)
-	debian_setup
-	;;
+--eos) eos_setup ;;
+--fedora) fedora_setup ;;
+--deb) debian_setup ;;
 '' | *)
 	echo "Usage: ./install-cli-tools.sh <flag>"
 	echo "Flags:"
