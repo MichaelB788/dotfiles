@@ -34,11 +34,10 @@ set tabstop=2
 set shiftwidth=2 smarttab
 set expandtab
 
-" line numbers
+" lines
+set scrolloff=999
 set number
 set relativenumber
-
-" line wrapping
 set wrap
 set linebreak
 
@@ -52,6 +51,8 @@ set splitbelow
 " =================
 
 " == Keymaps ==
+
+nmap <C-s> :wa<CR>
 
 " Tabs and splits
 nmap <leader>tn :tabnew<CR>
@@ -77,5 +78,8 @@ nmap <S-h> gT
 " Fuzzy finder
 nmap <leader>ff :Files .<CR> 
 nmap <leader>fg :GFiles<CR> 
+
+" Lazygit
+nmap <leader>gg :!lazygit<CR><CR>
 
 " =================
