@@ -8,8 +8,9 @@ let mapleader = " "
 let g:loaded_netrw = 1
 let g:loaded_netrwPlugin = 1
 let $FZF_DEFAULT_COMMAND = 'fd -tf -HLE .git'
-syntax on 
 runtime! ftplugin/man.vim " View manpages within vim
+syntax on 
+highlight VertSplit cterm=NONE
 
 " =========================================================================== "
 
