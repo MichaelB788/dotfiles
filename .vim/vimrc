@@ -1,39 +1,46 @@
+" ================================================================================ "
+
+" == Defaults ==
 set nocompatible              " be iMproved, required
 filetype off                  " required
+
+let mapleader = " "
 let g:loaded_netrw = 1
 let g:loaded_netrwPlugin = 1
-let $FZF_DEFAULT_COMMAND = 'fd --hidden --follow --exclude .git'
-let mapleader = " "
+let $FZF_DEFAULT_COMMAND = 'fd -tf -HLE .git'
 syntax on 
+runtime! ftplugin/man.vim " View manpages within vim
 
-" =================
+" ================================================================================ "
 
 " == Options ==
 
+" Useful stuff
 set clipboard=unnamedplus
-
+set shellcmdflag=-ic " For running custom shell scripts from .bashrc
 set autoindent
 
-" tabs & indent
+" Tabs and indentation
 set tabstop=2
 set shiftwidth=2 smarttab
 set expandtab
 
-" lines
+" Text positioning
+set sidescrolloff=999
 set scrolloff=999
 set number
 set relativenumber
 set wrap
 set linebreak
 
-" backspace
+" Backspace
 set backspace=indent,eol,start
 
-" split windows
+" Splitting
 set splitright
 set splitbelow
 
-" =================
+" ================================================================================ "
 
 " == Keymaps ==
 
@@ -67,4 +74,4 @@ nmap <leader>fg :GFiles<CR>
 " Lazygit
 nmap <leader>gg :!lazygit<CR><CR>
 
-" =================
+" ================================================================================ "
