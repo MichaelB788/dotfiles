@@ -1,4 +1,4 @@
-" ================================================================================ "
+" =========================================================================== "
 
 " == Defaults ==
 set nocompatible              " be iMproved, required
@@ -11,7 +11,7 @@ let $FZF_DEFAULT_COMMAND = 'fd -tf -HLE .git'
 syntax on 
 runtime! ftplugin/man.vim " View manpages within vim
 
-" ================================================================================ "
+" =========================================================================== "
 
 " == Options ==
 
@@ -19,6 +19,7 @@ runtime! ftplugin/man.vim " View manpages within vim
 set clipboard=unnamedplus
 set shellcmdflag=-ic " For running custom shell scripts from .bashrc
 set autoindent
+set textwidth=80
 
 " Tabs and indentation
 set tabstop=2
@@ -40,7 +41,7 @@ set backspace=indent,eol,start
 set splitright
 set splitbelow
 
-" ================================================================================ "
+" =========================================================================== "
 
 " == Keymaps ==
 
@@ -74,4 +75,4 @@ nmap <leader>fg :GFiles<CR>
 " Lazygit
 nmap <leader>gg :!lazygit<CR><CR>
 
-" ================================================================================ "
+" =========================================================================== "
