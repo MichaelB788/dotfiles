@@ -5,6 +5,8 @@ set -e
 
 eos_setup() {
 	sudo pacman -Syu
+  
+  sudo pacman -S vim
 
   sudo pacman -S fzf
 
@@ -37,7 +39,9 @@ eos_setup() {
 fedora_setup() {
 	sudo dnf update -y
 
-  sudo dnf install fzf
+  sudo dnf vim
+
+  sudo dnf fzf
 
 	sudo dnf kitty
 
@@ -62,6 +66,8 @@ fedora_setup() {
 
 debian_setup() {
 	sudo apt-get update && sudo apt-get upgrade
+
+  sudo apt-get install vim
 
   sudo apt-get install fzf
 
