@@ -33,7 +33,7 @@ set smartindent
 
 " Text positioning
 set sidescrolloff=999
-set scrolloff=999
+set scrolloff=8
 set number
 set relativenumber
 set wrap
@@ -51,6 +51,7 @@ set splitbelow
 " == Keymaps ==
 
 nmap <C-s> :wa<CR>
+nmap <leader>rn :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " Tabs and splits
 nmap <leader>tn :tabnew<CR>
