@@ -1,2 +1,1 @@
-vim.cmd("source $HOME/.vim/vimrc")
-require("mason").setup()
+require("config.lazy")
