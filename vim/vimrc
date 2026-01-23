@@ -1,0 +1,91 @@
+" =========================================================================== "
+" Plugins                                                                     "
+" =========================================================================== "
+
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
+
+let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+
+let g:clang_format#code_style = 'llvm'
+let g:clang_format#auto_format = 1 
+
+" =========================================================================== "
+" Options                                                                     "
+" =========================================================================== "
+
+let mapleader = " "
+
+filetype plugin indent on
+syntax enable 
+highlight VertSplit cterm=NONE
+set noswapfile
+set incsearch
+set clipboard=unnamedplus
+set textwidth=80
+
+" Tabs and indentation
+set tabstop=2
+set shiftwidth=2 smarttab
+set expandtab
+set smartindent
+
+" Text positioning
+set sidescrolloff=999
+set scrolloff=20
+set number
+set relativenumber
+set linebreak
+
+" Backspace
+set backspace=indent,eol,start
+
+" Splitting
+set splitright
+set splitbelow
+
+" =========================================================================== "
+" Keymaps                                                                     "
+" =========================================================================== "
+
+nnoremap <C-s> :wa<CR>
+nnoremap <leader>rn :%s/\<<C-r><C-w>\>//g<Left><Left>
+
+" Tabs and splits
+nnoremap <leader>tn :tabnew<CR>
+nnoremap <leader>sv :vsp<CR>
+nnoremap <leader>sh :sp<CR>
+
+" Window resizing
+nnoremap = :vertical resize +5<CR>
+nnoremap - :vertical resize -5<CR>
+nnoremap + :horizontal resize +2<CR>
+nnoremap _ :horizontal resize -2<CR>
+
+" Window navigation
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wl <C-w>l
+
+" Tab navigation
+nnoremap <S-l> gt
+nnoremap <S-h> gT
+
+" Fuzzy finder
+nnoremap <leader>ff :Files .<CR> 
+nnoremap <leader>fg :GFiles<CR> 
+
+" =========================================================================== "
+" Clang Format
+" =========================================================================== "
+function! ClangFormat()
+  let l:view = winsaveview()
+  silent execute '%!clang-format --style=LLVM'
+  call winrestview(l:view)
+endfunction
+
+augroup clang_format
+  autocmd!
+  autocmd BufWritePre *.c,*.cpp,*.h,*.hpp silent! call ClangFormat()
+augroup END

@@ -1,0 +1,38 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+" Source your .vimrc
+source ~/.vim/vimrc
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+" LSP navigation (using IdeaVim actions)
+nnoremap gD <Action>(GotoDeclaration)
+nnoremap gd <Action>(GotoDeclaration)
+nnoremap gi <Action>(GotoImplementation)
+nnoremap gr <Action>(FindUsages)
+
+" LSP tools (using IdeaVim actions)
+nnoremap K <Action>(QuickJavaDoc)
+nnoremap <C-k> <Action>(ParameterInfo)
+nnoremap <leader>td <Action>(GotoTypeDeclaration)
+nnoremap <leader>rn <Action>(RenameElement)
+nnoremap <leader>ca <Action>(ShowIntentionActions)
+
+" Debugging (using IdeaVim actions)
+nnoremap <F5> <Action>(Resume)
+nnoremap <F6> <Action>(StepOver)
+nnoremap <F7> <Action>(StepInto)
+nnoremap <F8> <Action>(StepOut)
+nnoremap <leader>b <Action>(ToggleLineBreakpoint)
+nnoremap <leader>dr <Action>(ActivateDebugToolWindow)
