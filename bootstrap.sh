@@ -1,15 +1,14 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
 
-echo "Linking dotfiles..."
+set -euo pipefail
 
-DOTFILES_PATH=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
+bootstrap() {
+  local dotfiles_path
+  dotfiles_path=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 
-ln -sfn "$DOTFILES_PATH/vim" "$HOME/.vim"
-ln -sf "$DOTFILES_PATH/ideavimrc" "$HOME/.ideavimrc"
+  "$dotfiles_path"/scripts/pacman.sh
+  "$dotfiles_path"/scripts/yay.sh
+  "$dotfiles_path"/scripts/stow-dotfiles.sh "$dotfiles_path"/modules/
+}
 
-for dir in "$DOTFILES_PATH/config"/*; do
-  ln -sfn $dir "$HOME/.config/"
-done
-
-echo "Done!"
+bootstrap
