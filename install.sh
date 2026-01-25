@@ -8,14 +8,14 @@ arch_setup() {
 	sudo pacman -Syu --noconfirm > /dev/null
 
   local pacman_pkgs=(
-    gvim fzf kitty lazygit
+    gvim fzf kitty lazygit code direnv
   )
 
   local yay_pkgs=(
     neovim-nightly-bin jetbrains-toolbox
   )
 
-  if !command -v yay &> /dev/null; then
+  if ! command -v yay &> /dev/null; then
     echo "yay undetected. Installing yay..."
     {
       sudo pacman -S --needed --noconfirm git base-devel
@@ -46,23 +46,24 @@ arch_setup() {
 clone_repos() {
   echo "Cloning my repos..."
   if [[ ! -d "$HOME/scripts" ]]; then
-    git clone git@github.com:MichaelB788/scripts.git $HOME/scripts > /dev/null
+    git clone git@github.com:MichaelB788/scripts.git "$HOME/scripts" > /dev/null
   fi
   if [[ ! -d "$HOME/notes" ]]; then
-    git clone git@github.com:MichaelB788/notes.git $HOME/notes > /dev/null
+    git clone git@github.com:MichaelB788/notes.git "$HOME/notes" > /dev/null
   fi
 }
 
 main() {
+  local DOTFILES_PATH
   read -rp "Link dotfiles? [y/N]: "
   if [[ "$REPLY" =~ ^[yY]$ ]]; then
-    local DOTFILES_PATH=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
+    DOTFILES_PATH=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
     bash "$DOTFILES_PATH/bootstrap.sh" 
   fi
 
-  arch_setup
+  arch_setup "${1}"
   clone_repos
   echo "Done!"
 }
 
-main ${@}
+main "${@}"
