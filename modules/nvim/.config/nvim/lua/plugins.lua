@@ -1,8 +1,8 @@
 local gh = function(x) return 'https://github.com/' .. x end
 
 -- Colorscheme
-vim.pack.add({ gh('rebelot/kanagawa.nvim') }, { confirm = false })
-vim.cmd.colorscheme('kanagawa-dragon')
+vim.pack.add({ gh('miikanissi/modus-themes.nvim') }, { confirm = false })
+vim.cmd.colorscheme('modus')
 
 -- Telescope
 vim.pack.add({

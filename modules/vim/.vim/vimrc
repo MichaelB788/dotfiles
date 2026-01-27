@@ -31,8 +31,7 @@ set expandtab
 set smartindent
 
 " Text positioning
-set sidescrolloff=999
-set scrolloff=20
+set scrolloff=8
 set number
 set relativenumber
 set linebreak

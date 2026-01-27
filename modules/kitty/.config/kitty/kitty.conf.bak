@@ -2714,6 +2714,6 @@ map ctrl+t new_window_with_cwd
 map ctrl+n new_tab_with_cwd
 
 # BEGIN_KITTY_THEME
-# Base4Tone_Classic_I Dark
+# Kanagawa_dragon
 include current-theme.conf
 # END_KITTY_THEME

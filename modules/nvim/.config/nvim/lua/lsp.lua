@@ -9,7 +9,6 @@ vim.pack.add({
 require('mason').setup()
 require('mason-tool-installer').setup {
   ensure_installed = {
-    'lua-language-server',
     'clangd',
     'clang-format',
   },
@@ -17,6 +16,8 @@ require('mason-tool-installer').setup {
   run_on_start = true,
 }
 
+-- Clangd
+vim.lsp.enable('clangd')
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('clangd', {}),
   callback = function(args)
