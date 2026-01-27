@@ -9,6 +9,7 @@ vim.o.swapfile=false
 vim.o.clipboard="unnamedplus"
 vim.o.shellcmdflag="-ic"
 vim.o.textwidth=80
+vim.o.colorcolumn="80"
 
 -- Tabs
 vim.o.tabstop=2
@@ -18,8 +19,7 @@ vim.o.expandtab=true
 vim.o.smartindent=true
 
 -- Navigation
-vim.o.sidescrolloff=999
-vim.o.scrolloff=20
+vim.o.scrolloff=8
 vim.o.number=true
 vim.o.relativenumber=true
 
