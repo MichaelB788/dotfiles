@@ -4,7 +4,7 @@ set -euo pipefail
 
 install_pacman_packages() {
   local PACMAN_PACKAGES=(
-    gvim fzf kitty lazygit direnv stow
+    fzf kitty lazygit direnv stow
   )
 
   echo "Installing packages via pacman..."
