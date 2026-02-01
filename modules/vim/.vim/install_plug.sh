@@ -1,10 +1,6 @@
 #!/bin/bash
 
 main() {
-  if [[ "${1}" == "--clang" ]]; then
-    sudo pacman -S clang
-  fi
-
   # install plugins here
   plugins_url=(
     https://github.com/junegunn/fzf.vim.git

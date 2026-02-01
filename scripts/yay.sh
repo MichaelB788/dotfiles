@@ -4,12 +4,9 @@ set -euo pipefail
 
 install_yay_packages() {
   if ! command -v yay &> /dev/null; then
-    echo "yay undetected. Installing yay..."
-    {
-      sudo pacman -S --needed --noconfirm git base-devel
-      git clone https://aur.archlinux.org/yay.git
-      (cd yay && makepkg -si)
-    } >/dev/null
+    sudo pacman -S --needed --noconfirm git base-devel
+    git clone https://aur.archlinux.org/yay.git
+    (cd yay && makepkg -si)
   fi
 
   local YAY_PACKAGES=(
@@ -17,7 +14,7 @@ install_yay_packages() {
   )
 
   echo "Installing packages via yay..."
-  yay -S --needed --noconfirm "${YAY_PACKAGES[@]}" > /dev/null
+  yay -S --needed --noconfirm "${YAY_PACKAGES[@]}"
 }
 
 install_yay_packages
