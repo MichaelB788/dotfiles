@@ -8,6 +8,10 @@
       "rev": "1309bc88bffcf1bedc3e84e7fa9004de93da774a",
       "src": "https://github.com/ribru17/bamboo.nvim"
     },
+    "blink.cmp": {
+      "rev": "fab799d086fd63fa5b389007f63767b23885ebf8",
+      "src": "https://github.com/saghen/blink.cmp"
+    },
     "fluoromachine.nvim": {
       "rev": "a279f667168e742df059caf1f1f4daf1de24f4f8",
       "src": "https://github.com/maxmx03/fluoromachine.nvim"
