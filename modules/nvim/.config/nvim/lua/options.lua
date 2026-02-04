@@ -32,6 +32,9 @@ vim.o.splitbelow=true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+-- Keep signcolumn on by default
+vim.o.signcolumn = 'yes'
+
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'
 
@@ -54,7 +57,7 @@ vim.o.expandtab=true
 vim.o.smartindent=true
 
 -- Text
-vim.o.wrap=false
+vim.o.wrap=true
 vim.o.linebreak=true
 vim.o.backspace="indent,eol,start"
 

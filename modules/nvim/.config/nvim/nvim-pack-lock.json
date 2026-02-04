@@ -12,6 +12,10 @@
       "rev": "fab799d086fd63fa5b389007f63767b23885ebf8",
       "src": "https://github.com/saghen/blink.cmp"
     },
+    "flash.nvim": {
+      "rev": "fcea7ff883235d9024dc41e638f164a450c14ca2",
+      "src": "https://github.com/folke/flash.nvim"
+    },
     "fluoromachine.nvim": {
       "rev": "a279f667168e742df059caf1f1f4daf1de24f4f8",
       "src": "https://github.com/maxmx03/fluoromachine.nvim"
