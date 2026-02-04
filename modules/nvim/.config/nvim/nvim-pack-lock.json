@@ -20,6 +20,10 @@
       "rev": "a279f667168e742df059caf1f1f4daf1de24f4f8",
       "src": "https://github.com/maxmx03/fluoromachine.nvim"
     },
+    "gruvbox.nvim": {
+      "rev": "a472496e1a4465a2dd574389dcf6cdb29af9bf1b",
+      "src": "https://github.com/ellisonleao/gruvbox.nvim"
+    },
     "kanagawa.nvim": {
       "rev": "aef7f5cec0a40dbe7f3304214850c472e2264b10",
       "src": "https://github.com/rebelot/kanagawa.nvim"
@@ -27,6 +31,10 @@
     "lazygit.nvim": {
       "rev": "a04ad0dbc725134edbee3a5eea29290976695357",
       "src": "https://github.com/kdheepak/lazygit.nvim"
+    },
+    "lualine.nvim": {
+      "rev": "47f91c416daef12db467145e16bed5bbfe00add8",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "mason-lspconfig.nvim": {
       "rev": "4823a251e7578a835bb979c37df390fca692ba39",
@@ -63,6 +71,10 @@
     "nvim-treesitter": {
       "rev": "511e5ccf404f8a96ee31866b079fca033a8a7c4e",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "nvim-web-devicons": {
+      "rev": "803353450c374192393f5387b6a0176d0972b848",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "plenary.nvim": {
       "rev": "b9fd5226c2f76c951fc8ed5923d85e4de065e509",

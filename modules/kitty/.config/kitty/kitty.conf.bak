@@ -2666,20 +2666,6 @@ enable_audio_bell no
 
 enabled_layouts tall:bias=50;full_size=1;mirrored=false
 
-┌──────────────┬───────────────┐
-│              │               │
-│              │               │
-│              │               │
-│              ├───────────────┤
-│              │               │
-│              │               │
-│              │               │
-│              ├───────────────┤
-│              │               │
-│              │               │
-│              │               │
-└──────────────┴───────────────┘
-
 map f11 toggle_fullscreen
 map ctrl+shift+c copy_to_clipboard
 map ctrl+shift+v paste_from_clipboard
@@ -2702,18 +2688,15 @@ font_family      Hurmit Nerd Font Mono Regular
 bold_font        Hurmit Nerd Font Mono Bold
 italic_font      Hurmit Nerd Font Mono Italic
 bold_italic_font Hurmit Nerd Font Mono Bold Italic
-font_size        10
+font_size        12
+modify_font cell_height 120%
 
 # Window layout
 map ctrl+shift+e next_layout
 map ctrl+shift+l next_window
 map ctrl+shift+h previous_window
-map ctrl+t new_window_with_cwd
-
-# Tab bar
-map ctrl+n new_tab_with_cwd
 
 # BEGIN_KITTY_THEME
-# Kanagawa_dragon
+# Modus Vivendi
 include current-theme.conf
 # END_KITTY_THEME
