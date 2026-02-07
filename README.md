@@ -14,15 +14,16 @@ a global script is a pain so I'd rather not bother.
 
 Clone the repo in a nice place, preferably the home directory.
 
-Then, run the `install.sh` script after cloning the repo:
+Then, assuming you are in the `dotfiles/` directory, run the following:
 
 ```bash
-chmod +x install.sh bootstrap.sh
-./install.sh
+chmod +x bootstrap.sh scripts/pacman.sh scripts/stow-dotfiles.sh scripts/yay.sh
+./bootstrap.sh
 ```
 
 The script should stow the dotfiles and install any packages I use. I
-encourage you to look at `scripts/pacman.sh` and `scripts/yay.sh`.
+encourage you to look at `scripts/pacman.sh` and `scripts/yay.sh` to see which
+packages are installed.
 
 ## Notes
 
