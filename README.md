@@ -1,36 +1,16 @@
 # Dotfiles
 
-```bash
-dotfiles
-├── bootstrap.sh
-├── config
-│   ├── kitty
-│   │   ├── current-theme.conf
-│   │   ├── kitty.conf
-│   │   └── kitty.conf.bak
-│   └── nvim
-│       ├── init.lua
-│       ├── lua
-│       │   ├── keymaps.lua
-│       │   ├── lsp.lua
-│       │   ├── options.lua
-│       │   └── plugins.lua
-│       └── nvim-pack-lock.json
-├── ideavimrc
-├── install.sh
-├── README.md
-└── vim
-    ├── install_plug.sh
-    └── vimrc
-```
+These are my dotfiles for Vim, Neovim, and kitty, as well as any personal
+scripts that I may or may not use. If you happen to be a lurker, I encourage
+you to take inspiration if you wish. **All of my dotfiles can be found in the
+`modules/` directory**.
 
-These are my dotfiles for EndeavorOS + SwayWM. The installation script
-that that comes with this repo is heavily personalized, so no guarantee
-this will work on anything I don't own.
-
-Most of my configuration files are minimal and not at all flashy.
+Do note: Most of my configuration files are minimal and not at all flashy.
 
 # Installation
+
+> WARN: The installation script only works on Arch based distributions. Making
+a global script is a pain so I'd rather not bother.
 
 Clone the repo in a nice place, preferably the home directory.
 
@@ -40,3 +20,21 @@ Then, run the `install.sh` script after cloning the repo:
 chmod +x install.sh bootstrap.sh
 ./install.sh
 ```
+
+The script should stow the dotfiles and install any packages I use. I
+encourage you to look at `scripts/pacman.sh` and `scripts/yay.sh`.
+
+## Notes
+
+Most of my configuration files are minimal. They are not meant to be fancy,
+they are just meant to work.
+
+Neovim does not use lazy.nvim because I much prefer the native package manager
+introduced in Neovim nightly. That and I don't like the idea of relying on a
+plugin mostly maintained by one dude for all of my other plugins.
+
+If you take a look under my `.vim` folder (which should be placed in the home
+directory), you should see a script called `install_plug.sh`. All this does is
+clone the git repo to all the vim plugins I use under `pack/vendor/` to best
+utilize the native package manager. **I highly recommend running this after
+a fresh install**.
