@@ -1,5 +1,4 @@
 require('options')
 require('keymaps')
-require('plugins/general-plugins')
-require('plugins/telescope')
+require('plugins')
 require('lsp')

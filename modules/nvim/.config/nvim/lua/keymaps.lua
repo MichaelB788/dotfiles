@@ -1,4 +1,4 @@
--- Open up a vim-like terminal session 
+-- Open up a vim-like terminal session
 vim.keymap.set('n', '<leader>tr', ':bo term <CR>a')
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
@@ -36,17 +36,21 @@ vim.keymap.set('n', '<S-h>', 'gT')
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- Rename token under cursor
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
+
+-- Go to defintion
+vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition)
+
+-- LSP format
+vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)
+
 -- Diagnostic Config & Keymaps
 -- See :help vim.diagnostic.Opts
 vim.diagnostic.config {
   update_in_insert = false,
   severity_sort = true,
-  float = { border = 'rounded', source = 'if_many' },
   underline = { severity = vim.diagnostic.severity.ERROR },
-
-  -- Can switch between these as you prefer
-  virtual_text = false, -- Text shows up at the end of the line
-  virtual_lines = false, -- Teest shows up underneath the line, with virtual lines
 }
 
-vim.keymap.set('n', '<leader>e', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>xx', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })

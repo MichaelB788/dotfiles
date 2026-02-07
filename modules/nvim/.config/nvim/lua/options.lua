@@ -50,16 +50,15 @@ vim.o.scrolloff = 10
 vim.o.confirm = true
 
 -- Tab settings
-vim.o.tabstop=2
-vim.o.shiftwidth=2
-vim.o.smarttab=true
-vim.o.expandtab=true
-vim.o.smartindent=true
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.softtabstop = 2
+vim.o.expandtab = true
 
 -- Text
-vim.o.wrap=true
-vim.o.linebreak=true
-vim.o.backspace="indent,eol,start"
+vim.o.wrap = true
+vim.o.linebreak = true
+vim.o.backspace = "indent,eol,start"
 
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
