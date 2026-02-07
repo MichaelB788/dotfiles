@@ -28,15 +28,6 @@ vim.keymap.set('n', '<S-h>', 'gT')
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- Rename token under cursor
-vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
-
--- Go to defintion
-vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition)
-
--- LSP format
-vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)
-
 -- Diagnostic Config & Keymaps
 -- See :help vim.diagnostic.Opts
 vim.diagnostic.config {
