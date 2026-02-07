@@ -3,6 +3,7 @@ vim.pack.add({
   'https://github.com/stevearc/oil.nvim',
   'https://github.com/ellisonleao/gruvbox.nvim',
   'https://github.com/folke/flash.nvim',
+  'https://github.com/numToStr/FTerm.nvim'
 }, { confirm = false })
 
 require 'mini.pick'.setup {}
@@ -23,3 +24,7 @@ vim.cmd.colorscheme('gruvbox')
 
 require 'flash'.setup {}
 vim.keymap.set('n', '<leader>j', '<cmd>lua require"flash".jump()<cr>')
+
+require 'FTerm'.setup {}
+vim.keymap.set('n', '<C-t>', '<CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('t', '<C-t>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
