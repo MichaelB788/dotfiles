@@ -40,6 +40,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- LSP format
     vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)
 
+    -- Code Actions
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
+
     if not client:supports_method('textDocument/willSaveWaitUntil')
         and client:supports_method('textDocument/formatting') then
       vim.api.nvim_create_autocmd('BufWritePre', {
