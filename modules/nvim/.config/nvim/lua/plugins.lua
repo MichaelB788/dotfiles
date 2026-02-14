@@ -9,8 +9,7 @@ vim.pack.add({
 require 'mini.pick'.setup {}
 vim.keymap.set('n', '<leader>f', ':Pick files<CR>')
 vim.keymap.set('n', '<leader>h', ':Pick help<CR>')
-vim.keymap.set('n', '<leader>gr', ':Pick grep<CR>')
-vim.keymap.set('n', '<leader>lg', ':Pick grep_live<CR>')
+vim.keymap.set('n', '<leader>g', ':Pick grep_live<CR>')
 
 require 'oil'.setup {}
 vim.keymap.set('n', '<leader>e', ':Oil<CR>')

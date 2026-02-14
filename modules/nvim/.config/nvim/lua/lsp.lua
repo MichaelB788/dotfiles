@@ -28,14 +28,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     -- Go to implementation (only for filetypes which support it)
     if client:supports_method('textDocument/implementation') then
-      vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation)
+      vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
     end
+
+    -- Go to defintion
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
 
     -- Rename token under cursor
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
-
-    -- Go to defintion
-    vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition)
 
     -- LSP format
     vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)

@@ -36,4 +36,4 @@ vim.diagnostic.config {
   underline = { severity = vim.diagnostic.severity.ERROR },
 }
 
-vim.keymap.set('n', '<leader>xx', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>xx', vim.diagnostic.setloclist)
