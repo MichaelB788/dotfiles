@@ -12,14 +12,28 @@ require('mason-tool-installer').setup {
     'clangd',
     'clang-format',
     'rust-analyzer',
+    'basedpyright',
   },
   auto_update = true,
   run_on_start = true,
 }
 
--- Enable the following language servers
--- See `:help lsp-config` for information about keys and how to configure
-vim.lsp.enable({ "clangd", "rust_analyzer", "lua_ls" })
+-- LSP Servers
+local servers = {
+  clangd = {},
+  rust_analyzer = {},
+  lua_ls = {},
+  based_pyright = {},
+}
+
+-- Enable LSP capabilities
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+for name, server in pairs(servers) do
+  server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+  vim.lsp.config(name, server)
+  vim.lsp.enable(name)
+end
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('lsp-attatch', {}),

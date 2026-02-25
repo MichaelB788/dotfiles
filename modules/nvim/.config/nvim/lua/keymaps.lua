@@ -1,6 +1,9 @@
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- Replace all occurances, no LSP
+vim.keymap.set('n', '<leader>sr', ':%s/\\<<C-r><C-w>\\>//g<left><left>')
+
 -- Write to all files
 vim.keymap.set('n', '<C-s>', ':wa<CR>')
 
