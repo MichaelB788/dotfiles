@@ -4,13 +4,33 @@
       "rev": "d1320892cc2ebab472935242d9d992a2c9570180",
       "src": "https://github.com/numToStr/FTerm.nvim"
     },
+    "cmp-nvim-lsp": {
+      "rev": "cbc7b02bb99fae35cb42f514762b89b5126651ef",
+      "src": "https://github.com/hrsh7th/cmp-nvim-lsp"
+    },
     "flash.nvim": {
       "rev": "fcea7ff883235d9024dc41e638f164a450c14ca2",
       "src": "https://github.com/folke/flash.nvim"
     },
+    "friendly-snippets": {
+      "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
+      "src": "https://github.com/rafamadriz/friendly-snippets"
+    },
+    "github-nvim-theme": {
+      "rev": "c106c9472154d6b2c74b74565616b877ae8ed31d",
+      "src": "https://github.com/projekt0n/github-nvim-theme"
+    },
     "gruvbox.nvim": {
       "rev": "a472496e1a4465a2dd574389dcf6cdb29af9bf1b",
       "src": "https://github.com/ellisonleao/gruvbox.nvim"
+    },
+    "markdown-preview.nvim": {
+      "rev": "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee",
+      "src": "https://github.com/iamcco/markdown-preview.nvim"
+    },
+    "mason-lspconfig.nvim": {
+      "rev": "2ab512d3d8e2fd1f679543c13e0dc4606c3d3d2e",
+      "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason-tool-installer.nvim": {
       "rev": "517ef5994ef9d6b738322664d5fdd948f0fdeb46",
@@ -24,9 +44,21 @@
       "rev": "4ad37ade984e69c43227b82ccdca5a92a22886de",
       "src": "https://github.com/nvim-mini/mini.pick"
     },
+    "modus-themes.nvim": {
+      "rev": "c57c2c56c9f0af04f3b609d11caa840880074784",
+      "src": "https://github.com/miikanissi/modus-themes.nvim"
+    },
+    "nvim-cmp": {
+      "rev": "da88697d7f45d16852c6b2769dc52387d1ddc45f",
+      "src": "https://github.com/hrsh7th/nvim-cmp"
+    },
     "nvim-lspconfig": {
       "rev": "92ee7d42320edfbb81f3cad851314ab197fa324a",
       "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-snippets": {
+      "rev": "56b4052f71220144689caaa2e5b66222ba5661eb",
+      "src": "https://github.com/garymjr/nvim-snippets"
     },
     "nvim-treesitter": {
       "rev": "511e5ccf404f8a96ee31866b079fca033a8a7c4e",
@@ -35,6 +67,14 @@
     "oil.nvim": {
       "rev": "f55b25e493a7df76371cfadd0ded5004cb9cd48a",
       "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "render-markdown.nvim": {
+      "rev": "1c958131c083c8557ea499fdb08c88b8afb05c4e",
+      "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+    },
+    "tokyonight.nvim": {
+      "rev": "5da1b76e64daf4c5d410f06bcb6b9cb640da7dfd",
+      "src": "https://github.com/folke/tokyonight.nvim"
     }
   }
 }

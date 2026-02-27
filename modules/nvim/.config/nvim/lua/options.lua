@@ -6,8 +6,7 @@ vim.g.localmapleader = " "
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- Disable termguicolors
-vim.o.termguicolors = false
+-- Enable window borders
 vim.o.winborder = "rounded"
 
 -- Disable swapfile
@@ -18,7 +17,9 @@ vim.o.number = true
 vim.o.relativenumber = true
 
 -- Sync clipboard between OS & nvim
-vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
+vim.schedule(function()
+	vim.o.clipboard = "unnamedplus"
+end)
 
 -- Launch bash shell scripts
 vim.o.shellcmdflag = "-ic"
@@ -37,10 +38,10 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- Keep signcolumn on by default
-vim.o.signcolumn = 'yes'
+vim.o.signcolumn = "yes"
 
 -- Preview substitutions live, as you type!
-vim.o.inccommand = 'split'
+vim.o.inccommand = "split"
 
 -- Show which line your cursor is on
 vim.o.cursorline = true
