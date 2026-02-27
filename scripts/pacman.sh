@@ -4,7 +4,7 @@ set -euo pipefail
 
 install_pacman_packages() {
   local PACMAN_PACKAGES=(
-    gvim fzf kitty lazygit direnv stow clang
+    gvim fzf kitty lazygit direnv stow clang npm
   )
 
   sudo pacman -S --needed --noconfirm "${PACMAN_PACKAGES[@]}"

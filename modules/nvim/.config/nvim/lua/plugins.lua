@@ -1,12 +1,18 @@
 vim.pack.add({
   'https://github.com/nvim-mini/mini.pick',
+
   'https://github.com/stevearc/oil.nvim',
-  'https://github.com/ellisonleao/gruvbox.nvim',
+
+  'https://github.com/folke/tokyonight.nvim',
+
   'https://github.com/folke/flash.nvim',
+
   'https://github.com/numToStr/FTerm.nvim',
+
   'https://github.com/hrsh7th/nvim-cmp',
   'https://github.com/hrsh7th/cmp-nvim-lsp',
-  'https://github.com/L3MON4D3/LuaSnip',
+  'https://github.com/rafamadriz/friendly-snippets',
+  'https://github.com/garymjr/nvim-snippets',
 }, { confirm = false })
 
 require 'mini.pick'.setup {}
@@ -17,30 +23,8 @@ vim.keymap.set('n', '<leader>g', ':Pick grep_live<CR>')
 require 'oil'.setup {}
 vim.keymap.set('n', '<leader>e', ':Oil<CR>')
 
-require("gruvbox").setup({
-  terminal_colors = true, -- add neovim terminal colors
-  undercurl = true,
-  underline = true,
-  bold = true,
-  italic = {
-    strings = true,
-    emphasis = true,
-    comments = true,
-    operators = false,
-    folds = true,
-  },
-  strikethrough = true,
-  invert_selection = false,
-  invert_signs = false,
-  invert_tabline = false,
-  inverse = true, -- invert background for search, diffs, statuslines and errors
-  contrast = "",  -- can be "hard", "soft" or empty string
-  palette_overrides = {},
-  overrides = {},
-  dim_inactive = false,
-  transparent_mode = true,
-})
-vim.cmd("colorscheme gruvbox")
+require "tokyonight".setup {}
+vim.cmd.colorscheme "tokyonight-storm"
 
 require 'flash'.setup {}
 vim.keymap.set('n', '<leader>j', '<cmd>lua require"flash".jump()<cr>')
@@ -62,6 +46,10 @@ cmp.setup({
   },
   formatting = {
     fields = { 'abbr' },
+  },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
   },
   mapping = cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),

@@ -1,13 +1,17 @@
 -- Mapleader
-vim.g.mapleader=" "
-vim.g.localmapleader=" "
+vim.g.mapleader = " "
+vim.g.localmapleader = " "
 
 -- Disable netrw
-vim.g.loaded_netrw=1
-vim.g.loaded_netrwPlugin=1
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- Disable termguicolors
+vim.o.termguicolors = false
+vim.o.winborder = "rounded"
 
 -- Disable swapfile
-vim.o.swapfile=false
+vim.o.swapfile = false
 
 -- Make line numbers and relative line numbers default
 vim.o.number = true
@@ -17,15 +21,15 @@ vim.o.relativenumber = true
 vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 
 -- Launch bash shell scripts
-vim.o.shellcmdflag="-ic"
+vim.o.shellcmdflag = "-ic"
 
 -- Highlight column 80
-vim.o.textwidth=80
-vim.o.colorcolumn="80"
+vim.o.textwidth = 80
+vim.o.colorcolumn = "80"
 
 -- Configure how new splits should be opened
-vim.o.splitright=true
-vim.o.splitbelow=true
+vim.o.splitright = true
+vim.o.splitbelow = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the
 -- search term
