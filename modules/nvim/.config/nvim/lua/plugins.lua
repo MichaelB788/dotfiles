@@ -1,4 +1,5 @@
 vim.pack.add({
+  "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/nvim-mini/mini.pick",
   "https://github.com/stevearc/oil.nvim",
   "https://github.com/ellisonleao/gruvbox.nvim",
@@ -13,6 +14,8 @@ vim.pack.add({
   "https://github.com/garymjr/nvim-snippets",
 }, { confirm = false })
 
+require("nvim-treesitter").install({ "rust", "javascript", "cpp", "c", "python" })
+
 require("mini.pick").setup()
 vim.keymap.set("n", "<leader>f", ":Pick files<CR>")
 vim.keymap.set("n", "<leader>h", ":Pick help<CR>")
@@ -22,10 +25,16 @@ require("oil").setup()
 vim.keymap.set("n", "<leader>e", ":Oil<CR>")
 
 require("gruvbox").setup({
-  transparent_mode = true,
+  terminal_colors = true,
+  contrast = "hard",
   palette_overrides = {
-    bright_green = "#50b59d",
+    bright_orange = "#ffac78",
+    bright_yellow = "#ffe878",
+    bright_red = "#ffc7ef",
+    bright_blue = "#b5e9ff",
+    bright_green = "#76DE99",
   },
+  transparent_mode = true,
 })
 vim.cmd.colorscheme("gruvbox")
 
