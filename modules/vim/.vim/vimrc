@@ -47,33 +47,33 @@ set splitbelow
 " Keymaps                                                                     "
 " =========================================================================== "
 
-nnoremap <C-s> :wa<CR>
-nnoremap <leader>rn :%s/\<<C-r><C-w>\>//g<Left><Left>
+nnoremap <C-s> <cmd>wa<cr>
+nnoremap <leader>rn <cmd>%s/\<<C-r><C-w>\>//g<Left><Left><cr>
+nnoremap <C-t> <cmd>term<cr>
 
 " Tabs and splits
-nnoremap <leader>tn :tabnew<CR>
-nnoremap <leader>sv :vsp<CR>
-nnoremap <leader>sh :sp<CR>
+nnoremap <leader>tn <cmd>tabnew<cr>
+nnoremap <leader>sv <cmd>vsp<cr>
+nnoremap <leader>sh <cmd>sp<cr>
 
 " Window resizing
-nnoremap = :vertical resize +5<CR>
-nnoremap - :vertical resize -5<CR>
-nnoremap + :horizontal resize +2<CR>
-nnoremap _ :horizontal resize -2<CR>
+nnoremap = <cmd>vertical resize +5<cr>
+nnoremap - <cmd>vertical resize -5<cr>
+nnoremap + <cmd>horizontal resize +2<cr>
+nnoremap _ <cmd>horizontal resize -2<cr>
 
 " Window navigation
-nnoremap <leader>wh <C-w>h
-nnoremap <leader>wj <C-w>j
-nnoremap <leader>wk <C-w>k
-nnoremap <leader>wl <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " Tab navigation
 nnoremap <S-l> gt
 nnoremap <S-h> gT
 
 " Fuzzy finder
-nnoremap <leader>ff :Files .<CR> 
-nnoremap <leader>fg :GFiles<CR> 
+nnoremap <leader>f <cmd>Files<CR> 
 
 " =========================================================================== "
 " Clang Format
