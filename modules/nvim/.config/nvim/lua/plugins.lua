@@ -7,6 +7,7 @@ vim.pack.add({
   "https://github.com/numToStr/FTerm.nvim",
   "https://github.com/MeanderingProgrammer/render-markdown.nvim",
   "https://github.com/iamcco/markdown-preview.nvim",
+  "https://github.com/windwp/nvim-autopairs",
 
   "https://github.com/hrsh7th/nvim-cmp",
   "https://github.com/hrsh7th/cmp-nvim-lsp",
@@ -46,6 +47,8 @@ vim.keymap.set("t", "<C-t>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>'
 
 require("render-markdown").setup()
 
+require("nvim-autopairs").setup()
+
 local cmp = require("cmp")
 cmp.setup({
   snippet = {
@@ -73,3 +76,6 @@ cmp.setup({
   }),
   sources = cmp.config.sources({ { name = "nvim_lsp" } }, { { name = "buffer" } }),
 })
+
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())

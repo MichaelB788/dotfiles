@@ -4,6 +4,14 @@
       "rev": "d1320892cc2ebab472935242d9d992a2c9570180",
       "src": "https://github.com/numToStr/FTerm.nvim"
     },
+    "LuaSnip": {
+      "rev": "dae4f5aaa3574bd0c2b9dd20fb9542a02c10471c",
+      "src": "https://github.com/L3MON4D3/LuaSnip"
+    },
+    "blink.cmp": {
+      "rev": "b650e976a927be6b46487a0a610b75af111376c5",
+      "src": "https://github.com/saghen/blink.cmp"
+    },
     "cmp-nvim-lsp": {
       "rev": "cbc7b02bb99fae35cb42f514762b89b5126651ef",
       "src": "https://github.com/hrsh7th/cmp-nvim-lsp"
@@ -19,6 +27,10 @@
     "github-nvim-theme": {
       "rev": "c106c9472154d6b2c74b74565616b877ae8ed31d",
       "src": "https://github.com/projekt0n/github-nvim-theme"
+    },
+    "gruvbox-material.nvim": {
+      "rev": "b5bb00910e98f49cc9311d19e03bc17ae8531c12",
+      "src": "https://github.com/f4z3r/gruvbox-material.nvim"
     },
     "gruvbox.nvim": {
       "rev": "a472496e1a4465a2dd574389dcf6cdb29af9bf1b",
@@ -48,6 +60,10 @@
       "rev": "c57c2c56c9f0af04f3b609d11caa840880074784",
       "src": "https://github.com/miikanissi/modus-themes.nvim"
     },
+    "nvim-autopairs": {
+      "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
+      "src": "https://github.com/windwp/nvim-autopairs"
+    },
     "nvim-cmp": {
       "rev": "da88697d7f45d16852c6b2769dc52387d1ddc45f",
       "src": "https://github.com/hrsh7th/nvim-cmp"
@@ -71,6 +87,10 @@
     "render-markdown.nvim": {
       "rev": "1c958131c083c8557ea499fdb08c88b8afb05c4e",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+    },
+    "rusty": {
+      "rev": "f310310991ecd50ca10745f8960cb5b8bd2ef208",
+      "src": "https://github.com/armannikoyan/rusty"
     },
     "tokyonight.nvim": {
       "rev": "5da1b76e64daf4c5d410f06bcb6b9cb640da7dfd",
