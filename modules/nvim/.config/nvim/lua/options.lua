@@ -67,3 +67,11 @@ vim.o.backspace = "indent,eol,start"
 
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
+
+-- Diagnostic Config & Keymaps
+-- See :help vim.diagnostic.Opts
+vim.diagnostic.config({
+	update_in_insert = false,
+	severity_sort = true,
+	underline = { severity = vim.diagnostic.severity.ERROR },
+})
