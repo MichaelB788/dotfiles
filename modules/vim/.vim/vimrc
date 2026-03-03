@@ -73,18 +73,7 @@ nnoremap <S-l> gt
 nnoremap <S-h> gT
 
 " Fuzzy finder
-nnoremap <leader>f <cmd>Files<CR> 
-
-" =========================================================================== "
-" Clang Format
-" =========================================================================== "
-function! ClangFormat()
-  let l:view = winsaveview()
-  silent execute '%!clang-format --style=LLVM'
-  call winrestview(l:view)
-endfunction
-
-augroup clang_format
-  autocmd!
-  autocmd BufWritePre *.c,*.cpp,*.h,*.hpp silent! call ClangFormat()
-augroup END
+nnoremap <leader>f :Files<CR> 
+nnoremap <leader>g :Rg<CR> 
+nnoremap <leader>l :RG<CR> 
+nnoremap <leader>h :Helptags<CR> 

@@ -1,20 +1,17 @@
 #!/bin/bash
 
-main() {
-  # install plugins here
-  plugins_url=(
-    https://github.com/junegunn/fzf.vim.git
-    https://github.com/kana/vim-operator-user.git
-    https://github.com/rhysd/vim-clang-format.git
-  )
+# install plugins here
+plugins=(
+  https://github.com/junegunn/fzf.vim.git
+)
+plugin_dir="$HOME/.vim/pack/plugins/start/"
 
-  for pkg in "${plugins_url[@]}"; do
-    repo_name=$(basename -s .git "$pkg")
-    dir="$HOME/.vim/pack/plugins/start/$repo_name"
+for plug in "${plugins[@]}"; do
+  name=${plug##*/}
+  name=${name%.git}
+  dir="$plugin_dir/$name"
 
-    mkdir -p "$dir"
-    git clone "$pkg" "$dir"
-  done
-}
-
-main ${@}
+  if [ ! -d "${dir}" ]; then
+    git clone "$plug" "$dir"
+  fi
+done
