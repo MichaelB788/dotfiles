@@ -36,3 +36,31 @@ vim.keymap.set("n", "<leader>xx", vim.diagnostic.setloclist)
 
 -- Open diagnostic float
 vim.keymap.set("n", "<leader>of", vim.diagnostic.open_float)
+
+-- Go to defintion
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+
+-- Rename token under cursor
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
+
+-- LSP format
+vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
+
+-- Code Actions
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
+
+-- Find files
+vim.keymap.set("n", "<leader>f", ":Pick files<CR>")
+
+-- Seach help files
+vim.keymap.set("n", "<leader>h", ":Pick help<CR>")
+
+-- Grep search
+vim.keymap.set("n", "<leader>g", ":Pick grep_live<CR>")
+
+-- Flash
+vim.keymap.set("n", "<leader>j", '<cmd>lua require"flash".jump()<cr>')
+
+-- Toggle FTerm terminal session
+vim.keymap.set("n", "<C-t>", '<CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set("t", "<C-t>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
