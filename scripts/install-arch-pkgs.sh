@@ -87,8 +87,8 @@ install_arch_pkgs() {
   done
 
   # Install display server specific packages
-  if [[ $INSTALL_XORG ]]; then sudo pacman -S --needed --noconfirm "${XORG_PKGS[@]}"; fi
-  if [[ $INSTALL_WAYLAND ]]; then sudo pacman -S --needed --noconfirm "${WAYLAND_PKGS[@]}"; fi
+  if $INSTALL_XORG; then sudo pacman -S --needed --noconfirm "${XORG_PKGS[@]}"; fi
+  if $INSTALL_WAYLAND; then sudo pacman -S --needed --noconfirm "${WAYLAND_PKGS[@]}"; fi
 
   # Install packages
   sudo pacman -S --needed --noconfirm "${PACMAN_PKGS[@]}"
