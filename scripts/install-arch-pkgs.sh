@@ -14,7 +14,7 @@ WAYLAND_PKGS=(
   swaylock
   waybar
   wofi
-  xdg-desktop-portal-wl
+  xdg-desktop-portal-wlr
   wl-clipboard
 )
 
