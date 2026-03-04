@@ -34,7 +34,6 @@ XORG_PKGS=(
 
 ZYPPER_PKGS=(
   # Dev tools
-  neovim
   vim
   fzf
   kitty
@@ -50,6 +49,16 @@ ZYPPER_PKGS=(
   thunar
   NetworkManager-applet
 )
+
+build_nvim() {
+  git clone https://github.com/neovim/neovim
+  (
+    cd neovim
+    make CMAKE_BUILD_TYPE=RelWithDebInfo
+    sudo make install
+  )
+  rm -rf neovim
+}
 
 install_suse_pkgs() {
   echo "Select display server to install:"
@@ -80,6 +89,7 @@ install_suse_pkgs() {
 
   # Install packages
   sudo zypper install -y "${ZYPPER_PKGS[@]}"
+  build_nvim
 }
 
 install_suse_pkgs
