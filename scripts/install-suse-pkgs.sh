@@ -8,22 +8,22 @@ set -euo pipefail
 }
 
 WAYLAND_PKGS=(
+  foot
   sway
   swaybg
   swayidle
   swaylock
   waybar
   wofi
-  xdg-desktop-portal-wlr
   wl-clipboard
 )
 
 XORG_PKGS=(
-  i3-wm
+  i3
   i3status
   i3lock
-  xorg-server
-  xorg-xinit
+  xorg-x11-server
+  xinit
   xterm
   xclip
   picom
@@ -32,12 +32,9 @@ XORG_PKGS=(
   feh
 )
 
-YAY_PACKAGES=(
-  neovim-nightly-bin jetbrains-toolbox visual-studio-code-bin
-)
-
-PACMAN_PKGS=(
+ZYPPER_PKGS=(
   # Dev tools
+  neovim
   vim
   fzf
   kitty
@@ -51,20 +48,10 @@ PACMAN_PKGS=(
 
   # Utilities
   thunar
-  network-manager-applet
+  NetworkManager-applet
 )
 
-install_arch_pkgs() {
-  if ! command -v yay &>/dev/null; then
-    {
-      mkdir -p /tmp/yay && cd /tmp/yay
-      sudo pacman -S --needed --noconfirm git base-devel
-      git clone https://aur.archlinux.org/yay.git
-      (cd yay && makepkg -si)
-    }
-    rm -rf /tmp/yay
-  fi
-
+install_suse_pkgs() {
   echo "Select display server to install:"
   select ds in "xorg" "wayland" "both"; do
     case $ds in
@@ -88,12 +75,11 @@ install_arch_pkgs() {
   done
 
   # Install display server specific packages
-  if $INSTALL_XORG; then sudo pacman -S --needed --noconfirm "${XORG_PKGS[@]}"; fi
-  if $INSTALL_WAYLAND; then sudo pacman -S --needed --noconfirm "${WAYLAND_PKGS[@]}"; fi
+  if $INSTALL_XORG; then sudo zypper install -y "${XORG_PKGS[@]}"; fi
+  if $INSTALL_WAYLAND; then sudo zypper install -y "${WAYLAND_PKGS[@]}"; fi
 
   # Install packages
-  sudo pacman -S --needed --noconfirm "${PACMAN_PKGS[@]}"
-  yay -S --needed --noconfirm "${YAY_PACKAGES[@]}"
+  sudo zypper install -y "${ZYPPER_PKGS[@]}"
 }
 
-install_arch_pkgs
+install_suse_pkgs
