@@ -33,7 +33,8 @@ XORG_PKGS=(
 )
 
 YAY_PACKAGES=(
-  neovim-nightly-bin jetbrains-toolbox visual-studio-code-bin
+  neovim-nightly-bin
+  jetbrains-toolbox
 )
 
 PACMAN_PKGS=(
@@ -43,6 +44,7 @@ PACMAN_PKGS=(
   kitty
   lazygit
   stow
+  code
   clang
   cmake
   ninja
