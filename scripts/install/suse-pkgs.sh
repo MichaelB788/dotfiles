@@ -35,6 +35,7 @@ XORG_PKGS=(
 ZYPPER_PKGS=(
   # Dev tools
   vim
+  code
   fzf
   kitty
   lazygit
@@ -82,6 +83,9 @@ install_suse_pkgs() {
     *) echo "Invalid option." ;;
     esac
   done
+
+  # Add code oss to keyring
+  zypper ar -cf https://download.opensuse.org/repositories/devel:/tools:/ide:/vscode/openSUSE_Tumbleweed devel_tools_ide_vscode
 
   # Install display server specific packages
   if $INSTALL_XORG; then sudo zypper install -y "${XORG_PKGS[@]}"; fi
