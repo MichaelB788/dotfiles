@@ -35,8 +35,8 @@ XORG_PKGS=(
 ZYPPER_PKGS=(
   # Dev tools
   vim
-  code
   fzf
+  ripgrep
   kitty
   lazygit
   stow
@@ -44,7 +44,7 @@ ZYPPER_PKGS=(
   cmake
   ninja
   npm
-  rust-analyzer
+  rust
 
   # Utilities
   thunar
@@ -84,16 +84,16 @@ install_suse_pkgs() {
     esac
   done
 
-  # Add code oss to keyring
-  zypper ar -cf https://download.opensuse.org/repositories/devel:/tools:/ide:/vscode/openSUSE_Tumbleweed devel_tools_ide_vscode
-
   # Install display server specific packages
   if $INSTALL_XORG; then sudo zypper install -y "${XORG_PKGS[@]}"; fi
   if $INSTALL_WAYLAND; then sudo zypper install -y "${WAYLAND_PKGS[@]}"; fi
 
   # Install packages
   sudo zypper install -y "${ZYPPER_PKGS[@]}"
-  build_nvim
+
+  if ! command -v nvim >/dev/null 2>&1; then
+    build_nvim
+  fi
 }
 
 install_suse_pkgs

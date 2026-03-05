@@ -41,6 +41,7 @@ PACMAN_PKGS=(
   # Dev tools
   vim
   fzf
+  ripgrep
   kitty
   lazygit
   stow
