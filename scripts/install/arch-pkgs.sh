@@ -45,7 +45,6 @@ PACMAN_PKGS=(
   kitty
   lazygit
   stow
-  code
   clang
   cmake
   ninja
