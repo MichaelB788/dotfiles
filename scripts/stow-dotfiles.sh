@@ -9,7 +9,7 @@ symlink-dotfiles() {
   fi
 
   local path_to_modules="$1"
-  local dotfiles_to_stow=(bin kitty nvim vim sway i3 rofi "Code - OSS")
+  local dotfiles_to_stow=(bin kitty nvim vim sway i3 rofi)
 
   (
     cd "$path_to_modules"

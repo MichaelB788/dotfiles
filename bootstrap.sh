@@ -27,14 +27,8 @@ bootstrap() {
   # Stow dotfiles
   "${scripts}/stow-dotfiles.sh" "${dotfiles_path}/modules"
 
-  # Install editor extensions/plugins
+  # Install vim plugins
   "${install}/vim-plugins.sh"
-
-  read -p "Install code extensions? [y/N] " -n 1 -r
-  echo
-  if [[ $REPLY =~ ^[Yy]$ ]]; then
-    "${install}/code-extensions.sh" "${dotfiles_path}/code-extensions-list.txt"
-  fi
 }
 
 bootstrap

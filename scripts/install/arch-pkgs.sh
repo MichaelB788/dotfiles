@@ -45,11 +45,17 @@ PACMAN_PKGS=(
   kitty
   lazygit
   stow
-  clang
   cmake
   ninja
+
+  # LSP
   npm
+  bash-language-server
+  shfmt
   rust-analyzer
+  clang
+  lua-language-server
+  stylua
 
   # Utilities
   thunar
