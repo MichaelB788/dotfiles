@@ -60,6 +60,7 @@ PACMAN_PKGS=(
   # Utilities
   thunar
   network-manager-applet
+  ttf-hack-nerd
 )
 
 install_arch_pkgs() {
