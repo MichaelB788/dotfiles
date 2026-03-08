@@ -1,22 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/sh
+set -e
 
-set -euo pipefail
+MODULES="${1:?Usage: $0 <path/to/dotfiles/modules>}"
 
-symlink-dotfiles() {
-  if ! [ -d "$1" ]; then
-    echo "Could not find modules directory at $1"
-    exit 1
-  fi
-
-  local path_to_modules="$1"
-  local dotfiles_to_stow=(bin kitty nvim vim sway i3 rofi)
-
-  (
-    cd "$path_to_modules"
-    for mod in "${dotfiles_to_stow[@]}"; do
-      stow -t "$HOME" "$mod"
-    done
-  )
-}
-
-symlink-dotfiles "$1"
+find "$MODULES" -maxdepth 1 -mindepth 1 -type d -exec sh -c '
+  stow -d "$1" -t "$HOME" "$(basename "$2")" 
+' shell "$MODULES" {} \;
