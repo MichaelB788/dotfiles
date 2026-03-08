@@ -1,41 +1,23 @@
 # Dotfiles
 
-These are my dotfiles for Vim, Neovim, and kitty, as well as any personal
-scripts that I may or may not use. If you happen to be a lurker, I encourage
-you to take inspiration if you wish. **All of my dotfiles can be found in the
-`modules/` directory**.
+Dotfiles for Arch-based distros.
 
-Do note: Most of my configuration files are minimal and not at all flashy.
+I stow all dotfiles during installation. As such, you can find **all of my
+configurations under the `modules/` directory**. Feel free to take a look.
 
-# Installation
+`bootstrap.sh` calls all of the scripts under `scripts/`. Be sure to take a look
+at them before installing.
 
-> WARN: The installation script only works on Arch based distributions. Making
-a global script is a pain so I'd rather not bother.
-
-Clone the repo in a nice place, preferably the home directory.
-
-Then, assuming you are in the `dotfiles/` directory, run the following:
+## Installation
 
 ```bash
-chmod +x bootstrap.sh scripts/pacman.sh scripts/stow-dotfiles.sh scripts/yay.sh
-./bootstrap.sh
+git clone https://github.com/MichaelB788/dotfiles.git $HOME/dotfiles
+cd $HOME/dotfiles
 ```
 
-The script should stow the dotfiles and install any packages I use. I
-encourage you to look at `scripts/pacman.sh` and `scripts/yay.sh` to see which
-packages are installed.
+**Verify that all the scripts under `scripts/` are executable BEFORE running
+`bootstrap.sh`**. After that, you can run:
 
-## Notes
-
-Most of my configuration files are minimal. They are not meant to be fancy,
-they are just meant to work.
-
-Neovim does not use lazy.nvim because I much prefer the native package manager
-introduced in Neovim nightly. That and I don't like the idea of relying on a
-plugin mostly maintained by one dude for all of my other plugins.
-
-If you take a look under my `.vim` folder (which should be placed in the home
-directory), you should see a script called `install_plug.sh`. All this does is
-clone the git repo to all the vim plugins I use under `pack/vendor/` to best
-utilize the native package manager. **I highly recommend running this after
-a fresh install**.
+```bash
+./$HOME/dotfiles/bootstrap.sh
+```
