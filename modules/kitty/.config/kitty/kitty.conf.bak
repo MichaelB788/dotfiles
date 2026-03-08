@@ -2684,9 +2684,3 @@ map ctrl+shift+l next_window
 map ctrl+shift+h previous_window
 
 font_family HackNerdFont
-
-
-# BEGIN_KITTY_THEME
-# Tokyo Night
-include current-theme.conf
-# END_KITTY_THEME
