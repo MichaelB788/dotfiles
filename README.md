@@ -10,14 +10,12 @@ at them before installing.
 
 ## Installation
 
+Clone the repo and make all scripts executable
+
 ```bash
 git clone https://github.com/MichaelB788/dotfiles.git $HOME/dotfiles
 cd $HOME/dotfiles
+chmod +x $HOME/dotfiles/bootstrap.sh $HOME/dotfiles/scripts/*.sh
 ```
 
-**Verify that all the scripts under `scripts/` are executable BEFORE running
-`bootstrap.sh`**. After that, you can run:
-
-```bash
-./$HOME/dotfiles/bootstrap.sh
-```
+Then, run the `bootstrap.sh` script to install all packages and dotfiles.

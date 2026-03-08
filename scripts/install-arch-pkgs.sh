@@ -32,7 +32,7 @@ XORG_PKGS=(
   feh
 )
 
-YAY_PACKAGES=(
+AUR_PACKAGES=(
   neovim-nightly-bin
   jetbrains-toolbox
 )
@@ -65,16 +65,12 @@ PACMAN_PKGS=(
 
 install_arch_pkgs() {
   if ! command -v yay &>/dev/null; then
-    {
-      mkdir -p /tmp/yay && cd /tmp/yay
-      sudo pacman -S --needed --noconfirm git base-devel
-      git clone https://aur.archlinux.org/yay.git
-      (cd yay && makepkg -si)
-    }
-    rm -rf /tmp/yay
+    sudo pacman -S --needed --noconfirm git base-devel
+    git clone https://aur.archlinux.org/yay.git
+    (cd yay && makepkg -si)
   fi
 
-  echo "Select display server to install:"
+  echo "Select the display server you want to install:"
   select ds in "xorg" "wayland" "both"; do
     case $ds in
     xorg)
@@ -97,12 +93,16 @@ install_arch_pkgs() {
   done
 
   # Install display server specific packages
-  if $INSTALL_XORG; then sudo pacman -S --needed --noconfirm "${XORG_PKGS[@]}"; fi
-  if $INSTALL_WAYLAND; then sudo pacman -S --needed --noconfirm "${WAYLAND_PKGS[@]}"; fi
+  if $INSTALL_XORG; then
+    sudo pacman -S --needed --noconfirm "${XORG_PKGS[@]}"
+  fi
+  if $INSTALL_WAYLAND; then
+    sudo pacman -S --needed --noconfirm "${WAYLAND_PKGS[@]}"
+  fi
 
   # Install packages
   sudo pacman -S --needed --noconfirm "${PACMAN_PKGS[@]}"
-  yay -S --needed --noconfirm "${YAY_PACKAGES[@]}"
+  yay -S --needed --noconfirm "${AUR_PACKAGES[@]}"
 }
 
 install_arch_pkgs
