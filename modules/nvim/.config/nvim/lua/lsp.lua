@@ -21,6 +21,7 @@ local servers = {
   clangd = {},
   rust_analyzer = {},
   bashls = {},
+  pylsp = {},
 }
 
 -- Enable LSP capabilities

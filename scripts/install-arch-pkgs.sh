@@ -56,6 +56,7 @@ PACMAN_PKGS=(
   clang
   lua-language-server
   stylua
+  python-lsp-server
 
   # Utilities
   thunar
