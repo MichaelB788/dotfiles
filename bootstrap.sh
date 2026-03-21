@@ -9,19 +9,7 @@ bootstrap() {
   local scripts="${dotfiles_path}/scripts"
 
   # Install OS specific packages
-  echo "Which distro would you like to setup?"
-  select dist in "Arch" "openSUSE"; do
-    case $dist in
-    Arch)
-      "${scripts}/install-arch-pkgs.sh"
-      break
-      ;;
-    openSUSE)
-      "${scripts}/install-suse-pkgs.sh"
-      break
-      ;;
-    esac
-  done
+  "${scripts}/install-arch-pkgs.sh"
 
   # Stow dotfiles
   "${scripts}/stow-dotfiles.sh" "${dotfiles_path}/modules"
