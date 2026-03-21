@@ -30,8 +30,8 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-# Fix position of monitors
-exec --no-startup-id xrandr --output HDMI-1-1 --right-of DP-4 --auto
+# XRandr setup
+exec --no-startup-id xrandr --output DP-1 --mode 1600x900
 
 # Set background wallpaper
 exec --no-startup-id feh --bg-fill $HOME/.config/i3/green.png
