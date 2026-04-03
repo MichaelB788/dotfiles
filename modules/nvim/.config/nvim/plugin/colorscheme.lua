@@ -1,3 +1,3 @@
-vim.pack.add({ "https://github.com/folke/tokyonight.nvim" }, { confirm = false })
+vim.pack.add({ "https://github.com/metalelf0/base16-black-metal-scheme" }, { confirm = false })
 
-vim.cmd.colorscheme("tokyonight-night")
+vim.cmd [[colorscheme base16-black-metal-mayhem]]

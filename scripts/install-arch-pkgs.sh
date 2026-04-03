@@ -61,7 +61,7 @@ PACMAN_PKGS=(
   # Utilities
   thunar
   network-manager-applet
-  ttf-hack-nerd
+  ttf-profont-nerd
 )
 
 install_arch_pkgs() {
