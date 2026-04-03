@@ -1,9 +1,5 @@
 {
   "plugins": {
-    "FTerm.nvim": {
-      "rev": "d1320892cc2ebab472935242d9d992a2c9570180",
-      "src": "https://github.com/numToStr/FTerm.nvim"
-    },
     "base16-black-metal-scheme": {
       "rev": "c7a32bec8105a1ceddb9fcc90b713dabde5e7e5e",
       "src": "https://github.com/metalelf0/base16-black-metal-scheme"
@@ -21,7 +17,7 @@
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "mini.pick": {
-      "rev": "fe079c2bd894a5ee70b62f23d819620ef40c4949",
+      "rev": "fd7e7efadddcec3f3d7f3b363a99aa44e7286c65",
       "src": "https://github.com/nvim-mini/mini.pick"
     },
     "nvim-autopairs": {
@@ -33,7 +29,7 @@
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-lspconfig": {
-      "rev": "8e2084bf5e40c79c1f42210a6ef96a0a4793a763",
+      "rev": "11afebab7ae8953c1db8f4c223e7742132d035f3",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-snippets": {

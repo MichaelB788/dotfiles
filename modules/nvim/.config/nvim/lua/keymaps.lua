@@ -1,9 +1,3 @@
--- Clear highlights on search when pressing <Esc> in normal mode
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-
--- Replace all occurances, no LSP
-vim.keymap.set("n", "<leader>sr", ":%s/\\<<C-r><C-w>\\>//g<left><left>")
-
 -- Write to all files
 vim.keymap.set("n", "<C-s>", ":wa<CR>")
 
@@ -34,17 +28,11 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- Open diagnostic jumplist
 vim.keymap.set("n", "<leader>xx", vim.diagnostic.setloclist)
 
--- Open diagnostic float
-vim.keymap.set("n", "<leader>of", vim.diagnostic.open_float)
-
 -- Go to defintion
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 
 -- Rename token under cursor
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
-
--- LSP format
-vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
 
 -- Code Actions
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
@@ -59,8 +47,9 @@ vim.keymap.set("n", "<leader>h", ":Pick help<CR>")
 vim.keymap.set("n", "<leader>g", ":Pick grep_live<CR>")
 
 -- Flash
-vim.keymap.set("n", "<leader>j", '<cmd>lua require"flash".jump()<cr>')
+vim.keymap.set("n", "<leader>j", ':lua require"flash".jump()<cr>')
 
--- Toggle FTerm terminal session
-vim.keymap.set("n", "<C-t>", '<CMD>lua require("FTerm").toggle()<CR>')
-vim.keymap.set("t", "<C-t>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+-- Terminal keymaps
+vim.keymap.set("n", "<C-t>", '<cmd>tabnew | term<CR>a')
+vim.keymap.set("t", "<C-t>", '<C-\\><C-n>:quit<CR>')
+vim.keymap.set("t", "<Esc>", '<C-\\><C-n>')
