@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
-
-[[ $EUID -ne 0 ]] || {
-  echo "Error: do not run this script as root."
-  exit 1
-}
+set -e
 
 WAYLAND_PKGS=(
   sway
@@ -14,22 +9,20 @@ WAYLAND_PKGS=(
   swaylock
   waybar
   wofi
-  xdg-desktop-portal-wlr
   wl-clipboard
 )
 
 XORG_PKGS=(
+  feh
   i3-wm
   i3status
   i3lock
+  picom
+  rofi
   xorg-server
   xorg-xinit
   xterm
   xclip
-  picom
-  rofi
-  xdg-desktop-portal-gtk
-  feh
 )
 
 AUR_PACKAGES=(
@@ -59,12 +52,14 @@ PACMAN_PKGS=(
   python-lsp-server
 
   # Utilities
+  xdg-desktop-portal-gtk
   thunar
   network-manager-applet
   ttf-profont-nerd
 )
 
 install_arch_pkgs() {
+  # Build yay from source
   if ! command -v yay &>/dev/null; then
     sudo pacman -S --needed --noconfirm git base-devel
     git clone https://aur.archlinux.org/yay.git
@@ -72,8 +67,8 @@ install_arch_pkgs() {
   fi
 
   echo "Select the display server you want to install:"
-  select ds in "xorg" "wayland" "both"; do
-    case $ds in
+  select server in "xorg" "wayland" "both"; do
+    case $server in
     xorg)
       INSTALL_XORG=true
       INSTALL_WAYLAND=false
