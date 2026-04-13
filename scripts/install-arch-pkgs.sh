@@ -55,7 +55,7 @@ PACMAN_PKGS=(
   xdg-desktop-portal-gtk
   thunar
   network-manager-applet
-  ttf-profont-nerd
+  ttf-firacode-nerd
 )
 
 install_arch_pkgs() {
