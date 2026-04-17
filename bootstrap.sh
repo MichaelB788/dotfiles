@@ -1,21 +1,16 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -e
 
-bootstrap() {
-  local dotfiles_path
-  dotfiles_path=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null && pwd)
+DOTFILES_PATH=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null && pwd)
 
-  local scripts="${dotfiles_path}/scripts"
+SCRIPTS_PATH="${DOTFILES_PATH}/scripts"
 
-  # Install OS specific packages
-  "${scripts}/install-arch-pkgs.sh"
+# Install packages
+"${SCRIPTS_PATH}/install-pkgs.sh"
 
-  # Stow dotfiles
-  "${scripts}/stow-dotfiles.sh" "${dotfiles_path}/modules"
+# Stow dotfiles
+"${SCRIPTS_PATH}/stow-dotfiles.sh" "${DOTFILES_PATH}/modules"
 
-  # Install vim plugins
-  "${scripts}/install-vim-plugins.sh"
-}
-
-bootstrap
+# Install vim plugins
+"${SCRIPTS_PATH}/install-vim-plugins.sh"
