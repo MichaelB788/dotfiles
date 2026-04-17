@@ -52,4 +52,3 @@ vim.keymap.set("n", "<leader>j", ':lua require"flash".jump()<cr>')
 -- Terminal keymaps
 vim.keymap.set("n", "<C-t>", '<cmd>tabnew | term<CR>a')
 vim.keymap.set("t", "<C-t>", '<C-\\><C-n>:quit<CR>')
-vim.keymap.set("t", "<Esc>", '<C-\\><C-n>')
