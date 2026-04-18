@@ -34,11 +34,13 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id xrandr --output DP-1 --mode 1600x900
 
 # Set background wallpaper
-exec --no-startup-id feh --bg-fill $HOME/.config/i3/green.png
+exec --no-startup-id feh --bg-fill $HOME/Downloads/img/green.png
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+
+exec --no-startup-id setxkbmap -option ctrl:nocaps
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
