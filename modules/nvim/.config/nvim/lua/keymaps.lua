@@ -50,5 +50,5 @@ vim.keymap.set("n", "<leader>g", ":Pick grep_live<CR>")
 vim.keymap.set("n", "<leader>j", ':lua require"flash".jump()<cr>')
 
 -- Terminal keymaps
-vim.keymap.set("n", "<C-t>", '<cmd>tabnew | term<CR>a')
+vim.keymap.set("n", "<C-t>", '<cmd>vsp | term<CR>a')
 vim.keymap.set("t", "<C-t>", '<C-\\><C-n>:quit<CR>')
