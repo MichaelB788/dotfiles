@@ -1,5 +1,6 @@
-#!/bin/sh
-set -e
+#!/usr/bin/env bash
+
+set -euo pipefail
 
 MODULES="${1:?Usage: $0 <path/to/dotfiles/modules>}"
 
