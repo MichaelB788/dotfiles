@@ -1,13 +1,7 @@
 # Dotfiles
 
-Dotfiles for Arch-based distros.
-
-I stow all dotfiles during installation. As such, you can find **all of my
-configurations under the `modules/` directory**. Feel free to take a look.
-
-`bootstrap.sh` calls all of the scripts under `scripts/`. Be sure to take a look
-at them before installing.
-
+Dotfiles for Arch-based and Void Linux. Comes with simple bootstrap script.
+ 
 ## Installation
 
 Clone the repo and make all scripts executable
