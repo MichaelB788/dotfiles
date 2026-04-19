@@ -35,6 +35,8 @@ bash-language-server
 shfmt
 rust-analyzer
 clang
+clang-tools-extra
+clang-analyzer
 lua-language-server
 StyLua
 python3-lsp-server
@@ -42,3 +44,4 @@ xdg-desktop-portal-gtk
 Thunar
 network-manager-applet
 elogind
+polkit
