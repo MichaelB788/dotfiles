@@ -2,7 +2,12 @@ sway
 swaybg
 swayidle
 swaylock
-waybar
+Waybar
+wmenu
+brightnessctl
+grim
+slurp
+xorg-server-xwayland
 wofi
 wl-clipboard
 feh
@@ -11,7 +16,7 @@ i3status
 i3lock
 picom
 rofi
-xorg-server
+xorg
 xinit
 xterm
 xclip
@@ -31,9 +36,9 @@ shfmt
 rust-analyzer
 clang
 lua-language-server
-stylua
+StyLua
 python3-lsp-server
 xdg-desktop-portal-gtk
 Thunar
 network-manager-applet
-nerd-fonts
+elogind
