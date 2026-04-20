@@ -225,7 +225,7 @@ gaps inner 5
 gaps inner 5
 smart_gaps on
 
-client.focused #ffffff #ffffff #ffffff #ffffff
+client.focused #9693ab #9693ab #9693ab #9693ab
 for_window [class="^.*"] border pixel 1
 hide_edge_borders smart
 
