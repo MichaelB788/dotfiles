@@ -45,3 +45,4 @@ Thunar
 network-manager-applet
 elogind
 polkit
+font-firacode
