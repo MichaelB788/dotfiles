@@ -11,6 +11,3 @@ SCRIPTS_PATH="${DOTFILES_PATH}/scripts"
 
 # Stow dotfiles
 "${SCRIPTS_PATH}/stow-dotfiles.sh" "${DOTFILES_PATH}/modules"
-
-# Install vim plugins
-"${SCRIPTS_PATH}/install-vim-plugins.sh"
