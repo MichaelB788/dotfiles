@@ -1,15 +1,6 @@
 # Dotfiles
 
-Dotfiles for Arch-based and Void Linux. Comes with simple bootstrap script.
- 
-## Installation
+Linux dotfiles. Current working distros are Void, Arch, and OpenSUSE.
 
-Clone the repo and make all scripts executable
-
-```bash
-git clone https://github.com/MichaelB788/dotfiles.git $HOME/dotfiles
-cd $HOME/dotfiles
-chmod +x $HOME/dotfiles/bootstrap.sh $HOME/dotfiles/scripts/*.sh
-```
-
-Then, run the `bootstrap.sh` script to install all packages and dotfiles.
+Mostly contains my development/terminal centric tools, such as Neovim and Kitty.
+Other things include my minimal configurations for i3 and SwayWM.
