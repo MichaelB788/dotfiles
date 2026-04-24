@@ -30,6 +30,7 @@ stow_necessary() {
   stow_mod "vim"
   stow_mod "nvim"
   stow_mod "kitty"
+  stow_mod "zed"
 }
 
 stow_twm_conf() {
