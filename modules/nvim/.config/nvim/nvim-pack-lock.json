@@ -20,6 +20,10 @@
       "rev": "437d44eb57312f23e6b931704694fc294922cd88",
       "src": "https://github.com/nvim-mini/mini.pick"
     },
+    "nightfox.nvim": {
+      "rev": "ba47d4b4c5ec308718641ba7402c143836f35aa9",
+      "src": "https://github.com/edeneast/nightfox.nvim"
+    },
     "noirbuddy.nvim": {
       "rev": "299dc7c68c29dabdb9564cb78e9169fd5bbca5f7",
       "src": "https://github.com/jesseleite/noirbuddy.nvim"

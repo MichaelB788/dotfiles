@@ -1,7 +1,12 @@
-vim.pack.add({ "https://github.com/nyoom-engineering/oxocarbon.nvim" }, { confirm = false })
+vim.pack.add({ "https://github.com/edeneast/nightfox.nvim" }, { confirm = false })
 
-vim.cmd [[colorscheme oxocarbon]]
+-- Default options
+require('nightfox').setup({
+  options = {
+    transparent = true,     -- Disable setting background
+    terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
+    dim_inactive = false,   -- Non focused panes set to alternative background
+  },
+})
 
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+vim.cmd [[colorscheme duskfox]]
