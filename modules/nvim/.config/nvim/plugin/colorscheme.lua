@@ -1,3 +1,7 @@
-vim.pack.add({ "https://github.com/metalelf0/base16-black-metal-scheme" }, { confirm = false })
+vim.pack.add({ "https://github.com/nyoom-engineering/oxocarbon.nvim" }, { confirm = false })
 
-vim.cmd [[colorscheme base16-black-metal-mayhem]]
+vim.cmd [[colorscheme oxocarbon]]
+
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })

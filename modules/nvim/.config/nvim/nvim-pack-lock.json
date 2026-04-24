@@ -20,6 +20,10 @@
       "rev": "437d44eb57312f23e6b931704694fc294922cd88",
       "src": "https://github.com/nvim-mini/mini.pick"
     },
+    "noirbuddy.nvim": {
+      "rev": "299dc7c68c29dabdb9564cb78e9169fd5bbca5f7",
+      "src": "https://github.com/jesseleite/noirbuddy.nvim"
+    },
     "nvim-autopairs": {
       "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
       "src": "https://github.com/windwp/nvim-autopairs"
@@ -39,6 +43,10 @@
     "oil.nvim": {
       "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
       "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "oxocarbon.nvim": {
+      "rev": "a7ba74849a00546a311f8c146320b433900393e7",
+      "src": "https://github.com/nyoom-engineering/oxocarbon.nvim"
     }
   }
 }
