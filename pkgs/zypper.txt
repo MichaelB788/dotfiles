@@ -1,3 +1,4 @@
+nvim
 vim
 fzf
 ripgrep
