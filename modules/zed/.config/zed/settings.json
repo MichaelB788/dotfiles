@@ -7,14 +7,6 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "diagnostics": {
-    "inline": {
-      "enabled": true,
-    },
-  },
-  "minimap": {
-    "show": "auto",
-  },
   "git": {
     "inline_blame": {
       "enabled": false,
@@ -23,7 +15,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Nightfox - blurred",
+    "dark": "Tokyo Night",
   },
   "show_wrap_guides": true,
   "relative_line_numbers": "enabled",
