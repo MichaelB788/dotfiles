@@ -18,6 +18,9 @@ install_packages() {
     xargs -a "${PKGS_PATH}/zypper.txt" sudo zypper install
     # Install stable version of Rust and Cargo
     rustup toolchain install stable
+  elif command -v apt-get >/dev/null; then
+    sudo apt full-upgrade
+    xargs -a "${PKGS_PATH}/apt.txt" sudo apt install 
   fi
 }
 

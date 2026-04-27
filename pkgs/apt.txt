@@ -1,0 +1,11 @@
+vim
+fzf
+ripgrep
+eza
+ugrep
+lazygit
+stow
+fastfetch
+htop
+distrobox
+fonts-firacode
