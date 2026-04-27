@@ -3,58 +3,29 @@
 set -euo pipefail
 
 DOTFILES_PATH=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null && pwd)
-PKGS_PATH="$DOTFILES_PATH/pkgs"
 
-# Install packages
-install_packages() {
-  if command -v pacman >/dev/null; then
-    sudo pacman -Syu
-    xargs -a "${PKGS_PATH}/pacman.txt" sudo pacman -S --needed
-  elif command -v xbps-install >/dev/null; then
-    sudo xbps-install -Su
-    xargs -a "${PKGS_PATH}/xbps.txt" sudo xbps-install
-  elif command -v zypper >/dev/null; then
-    sudo zypper dist-upgrade
-    xargs -a "${PKGS_PATH}/zypper.txt" sudo zypper install
-    # Install stable version of Rust and Cargo
-    rustup toolchain install stable
-  elif command -v apt-get >/dev/null; then
-    sudo apt full-upgrade
-    xargs -a "${PKGS_PATH}/apt.txt" sudo apt install 
-  fi
+# Stows the module should the binary exist
+stow_mod() {
+  command -v "$1" >/dev/null && stow -d "$DOTFILES_PATH/modules" -t "$HOME" "$1"
 }
+
+# Upgrade, then install packages
+sudo apt full-upgrade
+xargs -a "${DOTFILES_PATH}/apt_pkgs.txt" sudo apt install 
+
+# Install neovim if it doesn't exist
+if ! command -v nvim >/dev/null; then
+  curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+  sudo rm -rf /opt/nvim-linux-x86_64
+  sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+
+  echo "export PATH='$PATH:/opt/nvim-linux-x86_64/bin'" >> $HOME/.bashrc
+fi
 
 # Stow modules
-stow_mod() {
-  stow -d "$DOTFILES_PATH/modules" -t "$HOME" "$1"
-}
-
-stow_necessary() {
-  stow_mod "vim"
-  stow_mod "nvim"
-  stow_mod "kitty"
-  stow_mod "zed"
-}
-
-stow_twm_conf() {
-  read -p "Would you like to set up a TWM? (y/N): " ans 
-  if [[ "$ans" =~ ^[Yy]$ ]]; then
-    select opt in "sway" "i3" "both" "neither"; do
-      case $opt in
-        "sway") stow_mod "sway"; break ;;
-        "i3") stow_mod "i3"; break ;;
-        "both")
-          stow_mod "sway"
-          stow_mod "i3"
-          break
-          ;;
-        "nevermind") break ;;
-        *) echo "Invalid option" ;;
-      esac
-    done
-  fi
-}
-
-install_packages
-stow_necessary
-stow_twm_conf
+stow_mod "vim"
+stow_mod "nvim"
+stow_mod "kitty"
+stow_mod "zed"
+stow_mod "i3"
+stow_mod "sway"
