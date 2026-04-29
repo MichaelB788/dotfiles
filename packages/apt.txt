@@ -1,11 +1,10 @@
-curl
 kitty
+lazygit
+chromium
+curl
 vim
 fzf
 ripgrep
-eza
-ugrep
-lazygit
 stow
 fastfetch
 htop
