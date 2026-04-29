@@ -1,3 +1,4 @@
+curl
 kitty
 vim
 fzf

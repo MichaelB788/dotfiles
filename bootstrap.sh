@@ -6,7 +6,9 @@ DOTFILES_PATH=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null && pwd)
 
 # Stows the module should the binary exist
 stow_mod() {
-  command -v "$1" >/dev/null && stow -d "$DOTFILES_PATH/modules" -t "$HOME" "$1"
+  if command -v "$1" >/dev/null; then
+    stow -d "$DOTFILES_PATH/modules" -t "$HOME" "$1"
+  fi
 }
 
 # Upgrade, then install packages
