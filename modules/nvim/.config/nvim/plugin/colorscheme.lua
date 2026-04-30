@@ -1,3 +1,3 @@
-vim.pack.add({ "https://github.com/oskarnurm/koda.nvim" }, { confirm = false })
+vim.pack.add({ "https://github.com/rebelot/kanagawa.nvim" }, { confirm = false })
 
-vim.cmd[[colorscheme koda]]
+vim.cmd[[colorscheme kanagawa-dragon]]
