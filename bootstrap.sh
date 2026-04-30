@@ -3,7 +3,6 @@
 set -euo pipefail
 
 DOTFILES_PATH=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null && pwd)
-PKGS_PATH="$DOTFILES_PATH/packages"
 
 # Stows the module should the binary exist
 stow_mod() {
@@ -11,12 +10,9 @@ stow_mod() {
 }
 
 # Upgrade, then install packages
-if command -v apt >/dev/null; then
-  sudo apt full-upgrade
-  xargs -a "${PKGS_PATH}/apt.txt" sudo apt install
-elif command -v pacman >/dev/null; then
-  sudo pacman -Syu
-  xargs -a "${PKGS_PATH}/pacman.txt" sudo pacman -S
+if command -v zypper >/dev/null; then
+  sudo zypper dup
+  xargs -a "$DOTFILES_PATH/zypper.txt" sudo zypper install
 fi
 
 # Stow modules
@@ -24,8 +20,10 @@ stow_mod "vim"
 stow_mod "nvim"
 stow_mod "kitty"
 
-read -rp "Stow TWM config [y/N]? " -n 1
+read -rp "Would you like to setup sway? [y/N] " -n 1
+echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-  stow_mod "i3"
+  sudo zypper addlock sway-branding-openSUSE
+  sudo zypper install sway wofi
   stow_mod "sway"
 fi
