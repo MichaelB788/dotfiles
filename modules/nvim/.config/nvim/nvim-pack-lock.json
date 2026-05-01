@@ -1,9 +1,5 @@
 {
   "plugins": {
-    "base16-black-metal-scheme": {
-      "rev": "c7a32bec8105a1ceddb9fcc90b713dabde5e7e5e",
-      "src": "https://github.com/metalelf0/base16-black-metal-scheme"
-    },
     "cmp-nvim-lsp": {
       "rev": "cbc7b02bb99fae35cb42f514762b89b5126651ef",
       "src": "https://github.com/hrsh7th/cmp-nvim-lsp"
@@ -20,25 +16,9 @@
       "rev": "8ad3b4cdcc804b332c32db8f9743667e1bb82b99",
       "src": "https://github.com/rebelot/kanagawa.nvim"
     },
-    "koda.nvim": {
-      "rev": "4668e307f2f3a1e38bd627b14d13368ebf5b8d9f",
-      "src": "https://github.com/oskarnurm/koda.nvim"
-    },
     "mini.pick": {
       "rev": "437d44eb57312f23e6b931704694fc294922cd88",
       "src": "https://github.com/nvim-mini/mini.pick"
-    },
-    "molokai": {
-      "rev": "c67bdfcdb31415aa0ade7f8c003261700a885476",
-      "src": "https://github.com/tomasr/molokai"
-    },
-    "nightfox.nvim": {
-      "rev": "ba47d4b4c5ec308718641ba7402c143836f35aa9",
-      "src": "https://github.com/edeneast/nightfox.nvim"
-    },
-    "noirbuddy.nvim": {
-      "rev": "299dc7c68c29dabdb9564cb78e9169fd5bbca5f7",
-      "src": "https://github.com/jesseleite/noirbuddy.nvim"
     },
     "nvim-autopairs": {
       "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
@@ -49,7 +29,7 @@
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-lspconfig": {
-      "rev": "cb5bc0b2b35a6d513e3298d285db81453e791f4f",
+      "rev": "31026a13eefb20681124706a79fc1df6bf11ab27",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-snippets": {
@@ -59,22 +39,6 @@
     "oil.nvim": {
       "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
       "src": "https://github.com/stevearc/oil.nvim"
-    },
-    "oxocarbon.nvim": {
-      "rev": "a7ba74849a00546a311f8c146320b433900393e7",
-      "src": "https://github.com/nyoom-engineering/oxocarbon.nvim"
-    },
-    "poimandres.nvim": {
-      "rev": "a488957d803943a4201ac3b774913fcafa9e6b3a",
-      "src": "https://github.com/olivercederborg/poimandres.nvim"
-    },
-    "render-markdown.nvim": {
-      "rev": "d67113f11384c0dad96fced2f7b91f1fc811e97f",
-      "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
-    },
-    "tokyonight.nvim": {
-      "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
-      "src": "https://github.com/folke/tokyonight.nvim"
     }
   }
 }
