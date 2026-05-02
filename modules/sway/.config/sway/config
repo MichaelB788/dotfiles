@@ -15,7 +15,7 @@ set $menu wofi --show drun
 
 ### Output configuration
 # Wallpaper
-output * bg $HOME/Downloads/img/wallpaper.png fill
+output * bg $HOME/Downloads/img/wallpaper.jpg fill
 
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output DP-1 {
@@ -232,9 +232,7 @@ hide_edge_borders smart
 bar {
     position bottom
 
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    status_command i3status
 }
 
 include /etc/sway/config.d/*

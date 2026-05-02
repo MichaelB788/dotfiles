@@ -1,6 +1,9 @@
 sway
 wofi
+i3status
 fastfetch
+fzf
+ripgrep
 htop
 stow
 lazygit
@@ -10,6 +13,7 @@ neovim
 zed
 clang
 cmake
+boost
 ninja
 valgrind
 gdb
