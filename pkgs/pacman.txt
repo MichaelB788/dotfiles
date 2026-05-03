@@ -1,8 +1,10 @@
+wl-clipboard
 sway
 wofi
 i3status
 fastfetch
 fzf
+ripgrep
 ripgrep
 htop
 stow
@@ -11,6 +13,9 @@ kitty
 vim
 neovim
 zed
+bash-language-server
+lua-language-server
+python-lsp-server
 clang
 cmake
 boost
