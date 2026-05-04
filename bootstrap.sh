@@ -11,6 +11,9 @@ if command -v pacman >/dev/null; then
 elif command -v zypper >/dev/null; then
   sudo zypper dup
   xargs -a "$PKGS_PATH/zypper.txt" sudo zypper install
+elif command -v apt >/dev/null; then
+  sudo apt update && sudo apt upgrade
+  xargs -a "$PKGS_PATH/pacman.txt" sudo apt install
 fi
 
 stow -d "$DOTFILES_PATH/modules" -t "$HOME" vim nvim kitty sway zed i3
