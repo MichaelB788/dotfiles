@@ -7,6 +7,8 @@ lazygit
 kitty
 vim
 clang
+clangd
+clang-tools
 cmake
 ninja-build
 valgrind
@@ -17,3 +19,4 @@ libsdl3-dev
 libsdl3-image-dev
 libsdl3-ttf-dev
 catch2
+fonts-firacode
