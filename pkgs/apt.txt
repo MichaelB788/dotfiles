@@ -1,8 +1,12 @@
+chromium
+distrobox
 fastfetch
 fzf
 ripgrep
 htop
 stow
+curl
+wl-clipboard
 lazygit
 kitty
 vim
