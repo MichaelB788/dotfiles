@@ -16,6 +16,8 @@ lua-language-server
 python3-language-server
 python
 clang
+clang-tools-extra
+clang-analyzer
 gcc
 cmake
 ninja
