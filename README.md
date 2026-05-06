@@ -1,3 +1,3 @@
 # Dotfiles
 
-Personal linux dotfiles for Debian based distros.
+Linux dotfiles, mostly contains packages I need for development.

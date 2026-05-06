@@ -11,6 +11,9 @@ if command -v pacman >/dev/null; then
 elif command -v zypper >/dev/null; then
   sudo zypper dup
   xargs -a "$PKGS_PATH/zypper.txt" sudo zypper install
+elif command -v xbps-install >/dev/null; then
+  sudo xbps-install -Su
+  xargs -a "$PKGS_PATH/xbps.txt" sudo xbps-install
 elif command -v apt >/dev/null; then
   sudo apt update && sudo apt upgrade
   xargs -a "$PKGS_PATH/apt.txt" sudo apt install
