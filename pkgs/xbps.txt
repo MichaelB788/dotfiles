@@ -3,6 +3,7 @@ elogind
 polkit
 bluez
 cups
+pipewire
 NetworkManager
 lightdm
 xorg

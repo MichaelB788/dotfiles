@@ -40,8 +40,6 @@ exec --no-startup-id feh --bg-fill $HOME/Downloads/img/wallpaper.png
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-exec --no-startup-id setxkbmap -option ctrl:nocaps
-
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -194,6 +192,8 @@ bindsym $mod+r mode "resize"
 default_border none
 default_floating_border none
 
+# Custom config
+
 gaps inner 5
 gaps inner 5
 smart_gaps on
@@ -205,3 +205,6 @@ hide_edge_borders smart
 bar {
         status_command i3status
 }
+
+exec --no-startup-id setxkbmap -option ctrl:nocaps
+exec --no-startup-id pipewire
