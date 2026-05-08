@@ -1,3 +1,21 @@
+dbus
+elogind
+polkit
+bluez
+cups
+NetworkManager
+lightdm
+xorg
+xfce4
+brightnessctl
+i3
+i3-gaps
+i3status
+rofi
+sway
+wofi
+xdg-desktop-portal-gtk
+firefox
 chromium
 fastfetch
 fzf
@@ -10,7 +28,6 @@ lazygit
 kitty
 neovim
 vim
-vscode
 bash-language-server
 lua-language-server
 python3-language-server
@@ -25,6 +42,7 @@ valgrind
 gdb
 shfmt
 rustup
+rust-analyzer
 catch2
 SDL3-devel
 SDL3_image-devel
