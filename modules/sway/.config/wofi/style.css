@@ -1,15 +1,14 @@
 window {
-  font-family: "FiraCode";
   margin: 0px;
-  border: 2px solid #4a4480;
-  background-color: #0f0d1c;
+  border: 2px solid #8bb591;
+  background-color: #29362b;
 }
 
 #input {
   margin: 5px;
   border: none;
   color: #cdd6f4;
-  background-color: #0f0d1c;
+  background-color: #29362b;
 }
 
 #scroll {
@@ -23,6 +22,6 @@ window {
 }
 
 #entry:selected {
-  border: 2px solid #4a4480;
-  background-color: #1c1930;
+  border: 2px solid #8bb591;
+  background-color: #445947;
 }

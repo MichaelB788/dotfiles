@@ -3,10 +3,10 @@
 declare -A actions=(
   ["Lock"]="swaylock"
   ["Logout"]="swaymsg exit"
-  ["Suspend"]="systemctl suspend"
-  ["Hibernate"]="systemctl hibernate"
-  ["Reboot"]="systemctl reboot"
-  ["Shutdown"]="systemctl poweroff"
+  ["Suspend"]="loginctl suspend"
+  ["Hibernate"]="loginctl hibernate"
+  ["Reboot"]="loginctl reboot"
+  ["Shutdown"]="loginctl poweroff"
 )
 
 order=("Lock" "Logout" "Suspend" "Hibernate" "Reboot" "Shutdown")
