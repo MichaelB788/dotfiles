@@ -7,12 +7,9 @@ pipewire
 NetworkManager
 lightdm
 xorg
+xorg-server-xwayland
 xfce4
 brightnessctl
-i3
-i3-gaps
-i3status
-rofi
 sway
 wofi
 xdg-desktop-portal-gtk
