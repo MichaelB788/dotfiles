@@ -1,5 +1,4 @@
 chromium
-distrobox
 fastfetch
 fzf
 ripgrep

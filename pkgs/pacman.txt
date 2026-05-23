@@ -1,13 +1,12 @@
-wl-clipboard
-sway
-wofi
-i3status
+firefox
+chromium
 fastfetch
 fzf
 ripgrep
-ripgrep
 htop
 stow
+curl
+wl-clipboard
 lazygit
 kitty
 vim
@@ -29,4 +28,3 @@ sdl3
 sdl3_image
 sdl3_ttf
 catch2
-ttf-firacode-nerd
