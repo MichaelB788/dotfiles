@@ -9,6 +9,9 @@ PKGS_PATH="$DOTFILES_PATH/pkgs"
 if command -v pacman >/dev/null; then # Arch setup
   sudo pacman -Syu --no-confirm
   xargs -a "$PKGS_PATH/pacman.txt" sudo pacman -S --needed --no-confirm
+elif command -v xbps-install >/dev/null; then # Void setup
+  sudo xbps-install -Syu
+  xargs -a "$PKGS_PATH/xbps.txt" sudo xbps-install -y
 elif command -v apt >/dev/null; then # Debian setup
   sudo apt update && sudo apt upgrade
   xargs -a "$PKGS_PATH/apt.txt" sudo apt install
