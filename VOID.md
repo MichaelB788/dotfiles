@@ -1,23 +1,15 @@
-# Setting up Void
-Useful aliases to append to `.bashrc`
-```bash
-enable() {
-  sudo ln -s /etc/sv/"$1" /var/service
-}
-
-disable() {
-  sudo rm /var/service/"$1"
-}
-```
-
-# Services
+# Void Linux Quick Setup
+## Essential Services
 Enable these services:
 1. dbus
-2. cupsd
-3. bluetoothd
-    - `sudo usermod -aG <user> bluetooth`
+2. lightdm
+
+## Optional Services
+1. cupsd
+2. bluetoothd
+    - Add yourself to the bluetooth group, `sudo usermod -aG bluetooth <user>`
     - Use `bluetoothctl` to manage devices
-4. NetworkManger
-    - Disable `dhcpcd` and `wpa_supplicant` first
-    - Use `nmtui` to manage networks
-5. lightdm
+
+## Setting up NetworkManager
+1. Disable `dhcpcd` and `wpa_supplicant` first
+2. Use `nmtui` to manage networks
