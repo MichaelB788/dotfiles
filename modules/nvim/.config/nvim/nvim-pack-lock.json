@@ -1,8 +1,8 @@
 {
   "plugins": {
-    "bamboo.nvim": {
-      "rev": "1309bc88bffcf1bedc3e84e7fa9004de93da774a",
-      "src": "https://github.com/ribru17/bamboo.nvim"
+    "black-metal-theme-neovim": {
+      "rev": "d7ce1c4b9196b3b34e70ca4fa9af108bb4207818",
+      "src": "https://github.com/metalelf0/black-metal-theme-neovim"
     },
     "cmp-nvim-lsp": {
       "rev": "cbc7b02bb99fae35cb42f514762b89b5126651ef",
@@ -16,16 +16,12 @@
       "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
-    "kanagawa.nvim": {
-      "rev": "8ad3b4cdcc804b332c32db8f9743667e1bb82b99",
-      "src": "https://github.com/rebelot/kanagawa.nvim"
-    },
     "mini.pick": {
-      "rev": "437d44eb57312f23e6b931704694fc294922cd88",
+      "rev": "4522d9ab65224675df2cf1ede8c12f0410aae2be",
       "src": "https://github.com/nvim-mini/mini.pick"
     },
     "nvim-autopairs": {
-      "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
+      "rev": "7b9923abad60b903ece7c52940e1321d39eccc79",
       "src": "https://github.com/windwp/nvim-autopairs"
     },
     "nvim-cmp": {
@@ -33,7 +29,7 @@
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-lspconfig": {
-      "rev": "31026a13eefb20681124706a79fc1df6bf11ab27",
+      "rev": "a4ed4e761c400849e8c9f8bda33e5083f890268c",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-snippets": {
@@ -41,7 +37,7 @@
       "src": "https://github.com/garymjr/nvim-snippets"
     },
     "oil.nvim": {
-      "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
+      "rev": "b91ee5a77a6a9605d9c1aaf4fda74b66082c8297",
       "src": "https://github.com/stevearc/oil.nvim"
     }
   }
