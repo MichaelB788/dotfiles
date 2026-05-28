@@ -7,8 +7,8 @@ PKGS_PATH="$DOTFILES_PATH/pkgs"
 
 # Install packages
 if command -v pacman >/dev/null; then # Arch setup
-  sudo pacman -Syu --no-confirm
-  xargs -a "$PKGS_PATH/pacman.txt" sudo pacman -S --needed --no-confirm
+  sudo pacman -Syu --noconfirm
+  xargs -a "$PKGS_PATH/pacman.txt" sudo pacman -S --needed --noconfirm
 elif command -v xbps-install >/dev/null; then # Void setup
   sudo xbps-install -Syu
   xargs -a "$PKGS_PATH/xbps.txt" sudo xbps-install -y
