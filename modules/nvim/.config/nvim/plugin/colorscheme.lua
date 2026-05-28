@@ -1,7 +1,8 @@
-vim.pack.add({ "https://github.com/metalelf0/black-metal-theme-neovim" }, { confirm = false })
+vim.pack.add({ "https://github.com/rebelot/kanagawa.nvim" }, { confirm = false })
 
-require "black-metal".setup {
-  theme = "venom",
-  variant = "dark"
+require "kanagawa".setup {
+  transparent = true,
+  theme = "dragon"
 }
-require "black-metal".load()
+
+vim.cmd [[colorscheme kanagawa]]
