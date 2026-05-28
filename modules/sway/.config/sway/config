@@ -224,11 +224,16 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-default_border none
-default_floating_border none
+default_border pixel 1
+default_floating_border pixel 1
+
+gaps inner 1
+gaps outer 1
 smart_gaps on
+
 hide_edge_borders smart
-client.focused #ffffff #ffffff #ffffff #ffffff
+client.focused #a8a8a8 #a8a8a8 #a8a8a8 #a8a8a8
+
 bar {
   status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
   font pango:monospace 10
