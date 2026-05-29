@@ -1,6 +1,7 @@
 firefox
 chromium
-ttf-fira-code
+zed
+
 fastfetch
 fzf
 ripgrep
@@ -12,7 +13,7 @@ lazygit
 kitty
 vim
 neovim
-zed
+
 bash-language-server
 lua-language-server
 python-lsp-server
@@ -25,3 +26,5 @@ gdb
 shfmt
 rustup
 pyright
+
+ttf-fira-code

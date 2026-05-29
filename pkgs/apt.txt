@@ -1,14 +1,16 @@
 chromium
 fastfetch
+
+wl-clipboard
 fzf
 ripgrep
 htop
 stow
 curl
-wl-clipboard
 lazygit
 kitty
 vim
+
 clang
 clangd
 clang-tools
@@ -18,8 +20,5 @@ valgrind
 gdb
 shfmt
 rustup
-libsdl3-dev
-libsdl3-image-dev
-libsdl3-ttf-dev
-catch2
+
 fonts-firacode
