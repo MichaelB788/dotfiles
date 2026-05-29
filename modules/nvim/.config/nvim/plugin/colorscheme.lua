@@ -1,8 +1,7 @@
 vim.pack.add({ "https://github.com/rebelot/kanagawa.nvim" }, { confirm = false })
 
 require "kanagawa".setup {
-  transparent = true,
-  theme = "dragon"
+  transparent = true
 }
 
-vim.cmd [[colorscheme kanagawa]]
+vim.cmd [[colorscheme kanagawa-dragon]]

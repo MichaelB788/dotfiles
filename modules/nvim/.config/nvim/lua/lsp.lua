@@ -1,3 +1,4 @@
+-- LSP Plugins
 vim.pack.add({
   "https://github.com/neovim/nvim-lspconfig",
   "https://github.com/hrsh7th/cmp-nvim-lsp",
@@ -56,3 +57,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
   end,
 })
+
+-- LSP Keybindings
+vim.keymap.set("n", "<leader>xx", vim.diagnostic.setloclist)
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
