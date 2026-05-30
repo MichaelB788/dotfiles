@@ -20,3 +20,6 @@ fi
 
 # Stow dotfiles
 (cd "$MODULES_PATH" && stow -Rt "$HOME" */)
+
+# Download wallpaper
+wget -nc -P "$HOME/Pictures" https://w.wallhaven.cc/full/je/wallhaven-jevqpy.png

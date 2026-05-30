@@ -24,7 +24,7 @@ set $menu wmenu-run
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/.config/sway/wallpaper.png fill
+output * bg ~/Pictures/wallhaven-jevqpy.png fill
 #
 # Example configuration:
 #
