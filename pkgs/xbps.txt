@@ -11,19 +11,20 @@ NetworkManager
 xorg
 xorg-server-xwayland
 xdg-desktop-portal-gtk
+gnome-themes-extra-gtk
 brightnessctl
 wl-clipboard
 xclip
 sway
 wmenu
-i3
-i3status
-dmenu
 lightdm
 
 flatpak
+gnome-software
+pavucontrol
 firefox
 chromium
+libreoffice
 
 fastfetch
 fzf
