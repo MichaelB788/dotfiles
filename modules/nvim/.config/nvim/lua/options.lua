@@ -75,3 +75,10 @@ vim.diagnostic.config({
 	severity_sort = true,
 	underline = { severity = vim.diagnostic.severity.ERROR },
 })
+
+vim.cmd [[
+  highlight Normal guibg=none
+  highlight NonText guibg=none
+  highlight Normal ctermbg=none
+  highlight NonText ctermbg=none
+]]

@@ -2,9 +2,10 @@ firefox
 chromium
 
 lazygit
-ghostty
+kitty
 neovim
 vim
+firacode-nerd-fonts
 
 fastfetch
 fzf
