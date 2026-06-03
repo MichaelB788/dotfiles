@@ -1,17 +1,15 @@
 xorg-xwayland
 xdg-desktop-portal-gtk
 gnome-themes-extra
-
-brightnessctl
-wl-clipboard
-xclip
-ttf-jetbrains-mono-nerd
-
 sway
 wmenu
+pavucontrol
+brightnessctl
+
+wl-clipboard
+ttf-jetbrains-mono-nerd
 
 flatpak
-pavucontrol
 firefox
 chromium
 libreoffice-still
