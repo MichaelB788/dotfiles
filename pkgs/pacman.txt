@@ -1,15 +1,16 @@
 xorg-xwayland
 xdg-desktop-portal-gtk
 gnome-themes-extra
+
 brightnessctl
 wl-clipboard
 xclip
+ttf-jetbrains-mono-nerd
+
 sway
 wmenu
-lightdm
 
 flatpak
-gnome-software
 pavucontrol
 firefox
 chromium
