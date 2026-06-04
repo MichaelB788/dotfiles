@@ -12,15 +12,11 @@
       "enabled": false,
     },
   },
-  "minimap": {
-    "display_in": "all_editors",
-    "show": "always",
-  },
   "wrap_guides": [80],
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Ayu Dark",
+    "dark": "One Dark",
   },
   "show_wrap_guides": true,
   "relative_line_numbers": "enabled",
@@ -36,7 +32,7 @@
     "dark": "Zed (Default)",
   },
   "base_keymap": "JetBrains",
-  "ui_font_size": 15,
-  "buffer_font_size": 15,
+  "ui_font_size": 17,
+  "buffer_font_size": 17,
   "format_on_save": "on",
 }

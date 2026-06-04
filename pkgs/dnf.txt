@@ -5,6 +5,7 @@ lazygit
 kitty
 neovim
 vim
+zed
 jetbrainsmono-nerd-fonts
 
 fastfetch
