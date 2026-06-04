@@ -11,8 +11,6 @@ if command -v pacman >/dev/null; then # Arch setup
   xargs -a "$PKGS_PATH/pacman.txt" sudo pacman -S --needed --noconfirm
 elif command -v dnf >/dev/null; then # Fedora setup
   sudo dnf -y update
-  sudo dnf copr enable -y atim/lazygit
-  sudo dnf copr enable -y scottames/ghostty
   xargs -a "$PKGS_PATH/dnf.txt" sudo dnf install -y
 elif command -v apt >/dev/null; then # Debian setup
   sudo apt update
