@@ -4,9 +4,6 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-# Pipewire init
-exec pipewire
-
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -230,8 +227,8 @@ bindsym $mod+r mode "resize"
 default_border pixel 1
 default_floating_border pixel 1
 
-gaps inner 1
-gaps outer 1
+gaps inner 5
+gaps outer 5
 smart_gaps on
 
 hide_edge_borders smart
