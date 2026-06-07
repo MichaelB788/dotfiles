@@ -9,10 +9,8 @@ brightnessctl
 wl-clipboard
 ttf-jetbrains-mono-nerd
 
-flatpak
 firefox
 chromium
-libreoffice-still
 
 fastfetch
 fzf
