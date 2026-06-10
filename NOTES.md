@@ -50,7 +50,6 @@ sudo dnf group upgrade core
 Useful links:
 
 - [https://computingforgeeks.com/void-linux-post-install-setup/]
-- [https://docs.voidlinux.org/config/media/pipewire.html]
 
 ## Essential Services
 
@@ -58,6 +57,18 @@ Enable these services:
 
 1. dbus
 2. lightdm
+
+## PipeWire Setup
+
+Info comes from the official (documentation)[https://docs.voidlinux.org/config/media/pipewire.html]
+
+Run the following in the terminal to enable pipewire system-wide automatically.
+
+```bash
+sudo mkdir -p /etc/pipewire/pipewire.conf.d
+sudo ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d/
+sudo ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
+```
 
 ## Optional Services
 
