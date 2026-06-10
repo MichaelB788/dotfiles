@@ -12,6 +12,9 @@ if command -v pacman >/dev/null; then # Arch setup
 elif command -v dnf >/dev/null; then # Fedora setup
   sudo dnf -y update
   xargs -a "$PKGS_PATH/dnf.txt" sudo dnf install -y
+elif command -v xbps-install >/dev/null; then # Void setup
+  sudo xbps-install -Syu
+  xargs -a "$PKGS_PATH/xbps.txt" sudo xbps-install -y
 elif command -v apt >/dev/null; then # Debian setup
   sudo apt update
   sudo apt upgrade
