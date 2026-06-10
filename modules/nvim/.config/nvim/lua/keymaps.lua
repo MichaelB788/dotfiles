@@ -12,8 +12,21 @@ vim.keymap.set("n", "<S-l>", "gt")
 vim.keymap.set("n", "<S-h>", "gT")
 
 -- Terminal keymaps
-vim.keymap.set("n", "<C-t>", '<cmd>vsp | term<CR>a')
-vim.keymap.set("t", "<C-t>", '<C-\\><C-n>:quit<CR>')
+local term_buf = nil
+
+vim.keymap.set("n", "<C-t>", function()
+  if term_buf and vim.api.nvim_buf_is_valid(term_buf) then
+    vim.cmd[[tabnew]]
+    vim.api.nvim_win_set_buf(0, term_buf)
+    vim.cmd[[startinsert]]
+  else
+    vim.cmd[[tabnew | terminal]]
+    term_buf = vim.api.nvim_get_current_buf()
+    vim.cmd[[startinsert]]
+  end
+end)
+
+vim.keymap.set("t", "<C-t>", [[<C-\><C-n>:hide<CR>]])
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
