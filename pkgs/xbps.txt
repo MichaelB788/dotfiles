@@ -2,9 +2,6 @@ void-repo-nonfree
 dbus
 elogind
 polkit
-bluez
-libspa-bluetooth
-cups
 pipewire
 NetworkManager
 
@@ -14,15 +11,16 @@ xdg-desktop-portal-gtk
 gnome-themes-extra-gtk
 brightnessctl
 wl-clipboard
-xclip
-sway
-wmenu
-i3
-i3status
-dmenu
 lightdm
 
-pavucontrol
+xclip
+cinnamon-all
+papirus-icon-theme
+arc-theme
+
+sway
+wmenu
+
 firefox
 chromium
 
