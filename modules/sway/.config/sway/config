@@ -88,8 +88,9 @@ output * bg ~/Pictures/wallhaven-jevqpy.png fill
 
     # Slightly nicer swaynag
     bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit options:' \
-        -B 'Suspend' 'systemctl suspend' \
-        -B 'Shutdown' 'systemctl poweroff' \
+        -B 'Suspend' 'loginctl suspend' \
+        -B 'Shutdown' 'loginctl poweroff' \
+        -B 'Reboot' 'loginctl reboot' \
         -B 'Logout' 'swaymsg exit'
 #
 # Moving around:
@@ -274,5 +275,8 @@ output HDMI-A-1 {
 input "type:keyboard" {
   xkb_options ctrl:nocaps
 }
+
+# Setting the mouse theme
+seat seat0 xcursor_theme Adwaita 10
 
 include /etc/sway/config.d/*
