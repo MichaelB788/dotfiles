@@ -13,11 +13,6 @@ brightnessctl
 wl-clipboard
 lightdm
 
-xclip
-cinnamon-all
-papirus-icon-theme
-arc-theme
-
 sway
 wmenu
 
