@@ -11,6 +11,7 @@ xdg-desktop-portal-gtk
 gnome-themes-extra-gtk
 brightnessctl
 wl-clipboard
+font-firacode
 lightdm
 
 sway
