@@ -8,6 +8,7 @@ NetworkManager
 xorg
 xorg-server-xwayland
 xdg-desktop-portal-gtk
+xdg-desktop-portal-wlr
 gnome-themes-extra-gtk
 brightnessctl
 wl-clipboard
