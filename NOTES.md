@@ -1,6 +1,6 @@
-# Enabling Dark Mode on Sway
+# Enabling Dark Mode for a Tiling Window Manager
 
-To enable dark mode under sway, run the following:
+> NOTE: This assumes the TWM is using a GTK backend 
 
 ```bash
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
@@ -47,22 +47,18 @@ sudo dnf group upgrade core
 
 # Void Linux Quick Setup
 
-Useful links:
-
-- [https://computingforgeeks.com/void-linux-post-install-setup/]
-
 ## Essential Services
 
-Enable these services:
+Enable these services to get into a desktop session:
 
 1. dbus
 2. lightdm
 
 ## PipeWire Setup
 
-Info comes from the official (documentation)[https://docs.voidlinux.org/config/media/pipewire.html]
+See more [here](https://docs.voidlinux.org/config/media/pipewire.html)
 
-Run the following in the terminal to enable pipewire system-wide automatically.
+Run the following to enable pipewire system-wide automatically.
 
 ```bash
 sudo mkdir -p /etc/pipewire/pipewire.conf.d
@@ -70,24 +66,15 @@ sudo ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pip
 sudo ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
 ```
 
-## Optional Services
-
-1. cupsd
-2. bluetoothd
-   - Add yourself to the bluetooth group, `sudo usermod -aG bluetooth <user>`
-   - Use `bluetoothctl` to manage devices
+Reboot the system after running these commands. Also, append the `pipewire`
+command to any autostart script of your WM/DE.
 
 ## Setting up NetworkManager
 
 1. Disable `dhcpcd` and `wpa_supplicant` first
 2. Use `nmtui` to manage networks
 
-## Useful Aliases
+## Optional Services
 
-Quickly enable services
-
-```bash
-enable() {
-  sudo ln -s /etc/sv/"$1" /var/service/
-}
-```
+1. [Printing](https://docs.voidlinux.org/config/print/index.html)
+2. [Bluetooth](https://docs.voidlinux.org/config/bluetooth.html)
