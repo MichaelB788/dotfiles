@@ -15,10 +15,16 @@ wl-clipboard
 lightdm
 
 sway
-wmenu
+swaylock
+swayidle
+Waybar
+wofi
+font-awesome6
+light
 
 firefox
 chromium
+pavucontrol
 
 fastfetch
 fzf
