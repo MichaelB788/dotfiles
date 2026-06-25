@@ -19,3 +19,6 @@ fi
 
 # Download wallpaper
 wget -nc -P "$HOME/Pictures" https://w.wallhaven.cc/full/je/wallhaven-jevqpy.png
+
+# Download JetBrainsMono nerd font
+wget -nc -P "$HOME/.local/share/fonts" https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
