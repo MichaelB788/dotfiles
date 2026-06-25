@@ -19,12 +19,12 @@ map ctrl+shift+h previous_tab
 font_size 14
 
 # BEGIN_KITTY_THEME
-# Vague
+# Default
 include current-theme.conf
 # END_KITTY_THEME
 
 # BEGIN_KITTY_FONTS
-font_family      family="JetBrainsMono Nerd Font"
+font_family      family='JetBrainsMono Nerd Font' postscript_name=JetBrainsMonoNF-Regular
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
