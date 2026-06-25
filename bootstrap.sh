@@ -18,7 +18,14 @@ fi
 (cd "$DOTFILES_PATH/modules" && stow -Rt "$HOME" */)
 
 # Download wallpaper
-wget -nc -P "$HOME/Pictures" https://w.wallhaven.cc/full/je/wallhaven-jevqpy.png
+wget -nc -P "$HOME/Pictures" "https://w.wallhaven.cc/full/je/wallhaven-jevqpy.png"
 
 # Download JetBrainsMono nerd font
-wget -nc -P "$HOME/.local/share/fonts" https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
+FONT_PATH="$HOME/.local/share/fonts"
+JETBRAINS_FONT_PATH="$FONT_PATH/JetBrainsMono"
+if [ ! -d "$JETBRAINS_FONT_PATH" ]; then
+  wget -nc -P "$FONT_PATH" "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip"
+  unzip "$FONT_PATH/JetBrainsMono.zip" -d "$JETBRAINS_FONT_PATH"
+  rm "$FONT_PATH/JetBrainsMono.zip"
+  fc-cache -fv
+fi
