@@ -3,11 +3,10 @@
 set -euo pipefail
 
 DOTFILES_PATH=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null && pwd)
+
 PKGS_PATH="$DOTFILES_PATH/pkgs"
 if command -v dnf >/dev/null; then # Fedora Setup
-  # Add the Terra repo
-  sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release -y
-
+  sudo dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
   sudo dnf -y update
   xargs -a "$PKGS_PATH/dnf.txt" sudo dnf install -y
 elif command -v xbps-install >/dev/null; then # Void Setup
@@ -16,7 +15,7 @@ elif command -v xbps-install >/dev/null; then # Void Setup
 fi
 
 # Stow dotfiles
-(cd "$MODULES_PATH" && stow -Rt "$HOME" */)
+(cd "$DOTFILES_PATH/modules" && stow -Rt "$HOME" */)
 
 # Download wallpaper
 wget -nc -P "$HOME/Pictures" https://w.wallhaven.cc/full/je/wallhaven-jevqpy.png
