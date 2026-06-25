@@ -9,41 +9,7 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 # Fedora Linux Setup
 
-## DNF Configuration
-
-Append the following to `/etc/dnf/dnf.conf` under `[main]`
-
-```bash
-fastestmirror=True
-max_parallel_downloads=10
-defaultyes=True
-keepcache=True
-```
-
-## Terra Repo
-
-The Terra repo is a community-driven repo and contains many useful packages.
-
-```bash
-sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
-```
-
-## RPM Fusion and Codecs
-
-Install both the free and non-free RPM Fusion repos
-
-```bash
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-```
-
-Swap out the `ffmpeg-free` package
-
-```bash
-sudo dnf swap ffmpeg-free ffmpeg --allowerasing
-sudo dnf group upgrade multimedia
-sudo dnf group upgrade core
-```
+Check out this [article](https://techhut.tv/fedora-44-post-install-guide)
 
 # Void Linux Quick Setup
 

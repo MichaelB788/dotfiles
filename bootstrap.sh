@@ -4,9 +4,10 @@ set -euo pipefail
 
 DOTFILES_PATH=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" >/dev/null && pwd)
 PKGS_PATH="$DOTFILES_PATH/pkgs"
-MODULES_PATH="$DOTFILES_PATH/modules"
+if command -v dnf >/dev/null; then # Fedora Setup
+  # Add the Terra repo
+  sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release -y
 
-if command -v dnf >/dev/null; then # Fedora setup
   sudo dnf -y update
   xargs -a "$PKGS_PATH/dnf.txt" sudo dnf install -y
 elif command -v xbps-install >/dev/null; then # Void Setup
