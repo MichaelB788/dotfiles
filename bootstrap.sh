@@ -12,6 +12,17 @@ if command -v dnf >/dev/null; then # Fedora Setup
 elif command -v xbps-install >/dev/null; then # Void Setup
   sudo xbps-install -Syu
   xargs -a "$PKGS_PATH/xbps.txt" sudo xbps-install -y
+elif command -v apt >/dev/null; then # Debian
+  sudo apt update
+  sudo apt upgrade
+  xargs -a "$PKGS_PATH/apt.txt" sudo apt install
+
+  # Install neovim binary
+  curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+  sudo rm -rf /opt/nvim-linux-x86_64
+  sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+  echo "export PATH='$PATH:/opt/nvim-linux-x86_64/bin'" >> "$HOME/.bashrc" 
+
 fi
 
 # Stow dotfiles
