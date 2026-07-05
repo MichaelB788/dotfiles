@@ -7,6 +7,7 @@ input {
             //If you want to overwrite your keyboard layout,
             // uncomment the line below and change the layout accordingly.
             //layout "us" // Use the American keyboard layout
+            //options "caps:ctrl_modifier,ctrl:swapcaps" // Swap caps
         }
         numlock // Enable numlock on startup
     }
