@@ -113,6 +113,12 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
+# Screenshot
+bindsym Print       exec "grimshot save screen"
+bindsym Mod1+Print  exec "grimshot save window"
+bindsym Shift+Print exec "grimshot save area"
+bindsym Mod4+Print  exec "grimshot copy area"
+
 # Hold the modifier key and hold the left/right mouse button
 # to drag or resize a window respectively. This isn't exclusive
 # to floating windows:

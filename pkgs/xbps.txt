@@ -4,6 +4,7 @@ elogind
 polkit
 pipewire
 NetworkManager
+grimshot
 
 xorg
 xorg-server-xwayland
