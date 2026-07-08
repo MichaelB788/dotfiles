@@ -21,9 +21,16 @@ wofi
 font-awesome6
 light
 
+i3
+i3lock
+i3status
+xrandr
+rofi
+feh
+
 firefox
 chromium
-pavucontrol
+pwvucontrol
 
 fastfetch
 fzf

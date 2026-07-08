@@ -77,7 +77,7 @@
         "signal": 8,
         "interval": "once",
         "exec": "$HOME/.config/sway/audio.sh",
-        "on-click": "pavucontrol",
+        "on-click": "pwvucontrol",
     },
 
     "custom/hostname": {

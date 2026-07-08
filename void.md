@@ -1,24 +1,18 @@
-# Enabling Dark Mode for a Tiling Window Manager
+# Enabling Dark Mode
 
-> NOTE: This assumes the TWM is using a GTK backend 
+Assuming you have `gnome-themes-extra-gtk` installed, run the following:
 
 ```bash
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 ```
 
-# Fedora Linux Setup
-
-Check out this [article](https://techhut.tv/fedora-44-post-install-guide)
-
 # Void Linux Quick Setup
 
-## Essential Services
+## Setting up NetworkManager
 
-Enable these services to get into a desktop session:
-
-1. dbus
-2. lightdm
+1. Disable `dhcpcd` and `wpa_supplicant` first
+2. Use `nmtui` to manage networks
 
 ## PipeWire Setup
 
@@ -34,11 +28,6 @@ sudo ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pip
 
 Reboot the system after running these commands. Also, append the `pipewire`
 command to any autostart script of your WM/DE.
-
-## Setting up NetworkManager
-
-1. Disable `dhcpcd` and `wpa_supplicant` first
-2. Use `nmtui` to manage networks
 
 ## Optional Services
 
