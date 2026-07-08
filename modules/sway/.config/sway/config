@@ -2,12 +2,12 @@
 
 exec pipewire
 exec light -S 10
-
-input "type:keyboard" {
-  xkb_options ctrl:nocaps
-}
-
 seat seat0 xcursor_theme Adwaita 10
+
+# Uncomment the line below to swap ctrl with caps
+#input "type:keyboard" {
+#  xkb_options "ctrl:nocaps,ctrl:swapcaps"
+#}
 
 #==================================================================================#
 # Sway Window Manager Configuration File                                           #
