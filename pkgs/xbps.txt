@@ -33,16 +33,20 @@ firefox
 chromium
 pwvucontrol
 
+btop
+bat
 fastfetch
+onefetch
 fzf
 ripgrep
-htop
 stow
 curl
 wget
 unzip
 tree
 bash-completion
+
+yazi
 lazygit
 kitty
 neovim

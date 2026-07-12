@@ -1,12 +1,3 @@
-# Enabling Dark Mode
-
-Assuming you have `gnome-themes-extra-gtk` installed, run the following:
-
-```bash
-gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-```
-
 # Void Linux Quick Setup
 
 ## Setting up NetworkManager
@@ -33,3 +24,25 @@ command to any autostart script of your WM/DE.
 
 1. [Printing](https://docs.voidlinux.org/config/print/index.html)
 2. [Bluetooth](https://docs.voidlinux.org/config/bluetooth.html)
+
+# Setting up Sway
+
+## Enabling Dark Mode
+
+Assuming you have `gnome-themes-extra-gtk` installed, run the following:
+
+```bash
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+```
+## Fixing drun
+
+Sometimes `drun` refuses to open TUI applications with a `.desktop` entry
+because it attempts to use a default terminal emulator not configurable through
+the sway config file, in my case that was `xterm`.
+
+To fix this, create a symlink over the default terminal emulator:
+
+```bash
+sudo ln -s /usr/bin/kitty /usr/bin/xterm
+```
