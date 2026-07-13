@@ -33,6 +33,12 @@ firefox
 chromium
 pwvucontrol
 
+yazi
+lazygit
+kitty
+neovim
+vim
+
 btop
 bat
 fastfetch
@@ -46,12 +52,6 @@ unzip
 tree
 bash-completion
 
-yazi
-lazygit
-kitty
-neovim
-vim
-
 clang-tools-extra
 gcc
 cmake
@@ -62,3 +62,6 @@ rustup
 bash-language-server
 lua-language-server
 python3-lsp-server
+SDL3-devel
+SDL3_image-devel
+SDL3_ttf-devel

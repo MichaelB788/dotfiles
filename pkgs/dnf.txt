@@ -3,15 +3,18 @@ chromium
 kitty
 gnome-tweaks
 
+btop
+yazi
 lazygit
+kitty
 neovim
 vim
-jetbrainsmono-nerd-fonts
 
+bat
 fastfetch
+onefetch
 fzf
 ripgrep
-htop
 stow
 curl
 wget
@@ -31,3 +34,6 @@ gdb
 rustup
 bash-language-server
 python-lsp-server+all
+SDL3-devel
+SDL3_image-devel
+SDL3_ttf-devel
