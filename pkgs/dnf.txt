@@ -4,7 +4,6 @@ kitty
 gnome-tweaks
 
 btop
-yazi
 lazygit
 kitty
 neovim
@@ -21,7 +20,6 @@ wget
 unzip
 tree
 bash-completion
-distrobox
 
 clang
 clang-tools-extra
@@ -33,7 +31,12 @@ valgrind
 gdb
 rustup
 bash-language-server
-python-lsp-server+all
+python3-lsp-server
+libtree-sitter-cli
+libtree-sitter-c
+libtree-sitter-cpp
+libtree-sitter-rust
+libtree-sitter-python
 SDL3-devel
 SDL3_image-devel
 SDL3_ttf-devel
