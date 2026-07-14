@@ -18,7 +18,7 @@ vim.o.relativenumber = true
 
 -- Sync clipboard between OS & nvim
 vim.schedule(function()
-	vim.o.clipboard = "unnamedplus"
+  vim.o.clipboard = "unnamedplus"
 end)
 
 -- Launch bash shell scripts
@@ -71,9 +71,9 @@ vim.o.showmode = false
 -- Diagnostic Config & Keymaps
 -- See :help vim.diagnostic.Opts
 vim.diagnostic.config({
-	update_in_insert = false,
-	severity_sort = true,
-	underline = { severity = vim.diagnostic.severity.ERROR },
+  update_in_insert = false,
+  severity_sort = true,
+  underline = { severity = vim.diagnostic.severity.ERROR },
 })
 
 vim.cmd [[
