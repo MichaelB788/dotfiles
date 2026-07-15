@@ -32,7 +32,7 @@ gdb
 rustup
 bash-language-server
 python3-lsp-server
-libtree-sitter-cli
+tree-sitter-cli
 libtree-sitter-c
 libtree-sitter-cpp
 libtree-sitter-rust
