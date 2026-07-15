@@ -30,7 +30,9 @@ if [ ! -d "$JETBRAINS_FONT_PATH" ]; then
   fc-cache -fv
 fi
 
-# Install Treesitter queries
-git clone https://github.com/nvim-treesitter/nvim-treesitter.git
-mv nvim-treesitter/runtime/queries "$MODULES_PATH/nvim/.config/nvim/"
-sudo rm -rf nvim-treesitter
+# Install Treesitter queries from nvim-treesitter
+if [ ! -d "$MODULES_PATH/nvim/.config/nvim/queries" ]; then
+  git clone https://github.com/nvim-treesitter/nvim-treesitter.git
+  mv nvim-treesitter/runtime/queries "$MODULES_PATH/nvim/.config/nvim/"
+  sudo rm -rf nvim-treesitter
+fi
