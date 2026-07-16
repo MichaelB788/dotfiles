@@ -3,4 +3,3 @@
 
 spawn-sh-at-startup "noctalia"
 spawn-sh-at-startup "pipewire"
-spawn-sh-at-startup "noctalia brightness-set 10"
