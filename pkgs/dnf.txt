@@ -3,7 +3,6 @@ chromium
 kitty
 gnome-tweaks
 
-btop
 lazygit
 kitty
 neovim
@@ -32,11 +31,6 @@ gdb
 rustup
 bash-language-server
 python3-lsp-server
-tree-sitter-cli
-libtree-sitter-c
-libtree-sitter-cpp
-libtree-sitter-rust
-libtree-sitter-python
 SDL3-devel
 SDL3_image-devel
 SDL3_ttf-devel
