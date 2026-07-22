@@ -29,11 +29,3 @@ if [ ! -d "$JETBRAINS_FONT_PATH" ]; then
   rm "$FONT_PATH/JetBrainsMono.zip"
   fc-cache -fv
 fi
-
-# Install Treesitter queries from nvim-treesitter
-QUERIES_PATH="$MODULES_PATH/nvim/.config/nvim/queries"
-if [ ! -d "$QUERIES_PATH" ]; then
-  git clone https://github.com/nvim-treesitter/nvim-treesitter.git
-  mv nvim-treesitter/runtime/queries "$QUERIES_PATH"
-  rm -rf nvim-treesitter
-fi
