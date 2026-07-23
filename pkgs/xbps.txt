@@ -62,11 +62,6 @@ rustup
 bash-language-server
 lua-language-server
 python3-lsp-server
-tree-sitter-c
-tree-sitter-cli
-tree-sitter-cpp
-tree-sitter-rust
-tree-sitter-python
 SDL3-devel
 SDL3_image-devel
 SDL3_ttf-devel
