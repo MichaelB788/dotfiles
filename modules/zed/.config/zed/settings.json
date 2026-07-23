@@ -16,7 +16,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Ayu Dark",
+    "dark": "Gruvbox Dark",
   },
   "show_wrap_guides": true,
   "relative_line_numbers": "enabled",
@@ -25,6 +25,12 @@
   "session": {
     "trust_all_worktrees": true,
   },
+  "gutter": {
+    "folds": false,
+  },
+  "scrollbar": {
+    "show": "never",
+  },
   "vim_mode": true,
   "icon_theme": {
     "mode": "light",
@@ -32,7 +38,7 @@
     "dark": "Zed (Default)",
   },
   "base_keymap": "JetBrains",
-  "ui_font_size": 17,
-  "buffer_font_size": 17,
+  "ui_font_size": 18,
+  "buffer_font_size": 18,
   "format_on_save": "on",
 }
