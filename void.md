@@ -1,15 +1,21 @@
 # Void Linux Quick Setup
 
-## Setting up NetworkManager
+## NetworkManager Setup
 
-1. Disable `dhcpcd` and `wpa_supplicant` first
-2. Use `nmtui` to manage networks
+[NetworkManager docs](https://docs.voidlinux.org/config/network/networkmanager.html)
+
+```bash
+sudo rm /var/service/{dhcpcd,wpa_supplicant}
+sudo ln -s /etc/sv/NetworkManager /var/service
+```
+
+Configure your network with `nmtui`
 
 ## PipeWire Setup
 
-See more [here](https://docs.voidlinux.org/config/media/pipewire.html)
+[PipeWire docs](https://docs.voidlinux.org/config/media/pipewire.html)
 
-Run the following to enable pipewire system-wide automatically.
+The following bash snippet was taken straight from the documentation:
 
 ```bash
 sudo mkdir -p /etc/pipewire/pipewire.conf.d
@@ -17,32 +23,60 @@ sudo ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pip
 sudo ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
 ```
 
-Reboot the system after running these commands. Also, append the `pipewire`
-command to any autostart script of your WM/DE.
+A system reboot is required for changes to take effect.
 
-## Optional Services
+Make sure `pipewire` starts automatically under your WM/DE of choice.
 
-1. [Printing](https://docs.voidlinux.org/config/print/index.html)
-2. [Bluetooth](https://docs.voidlinux.org/config/bluetooth.html)
+# Optional Services
 
-# Setting up Sway
+## Printing
+
+[Printing docs](https://docs.voidlinux.org/config/print/index.html)
+
+If the printer supports IPP Everywhere, not much setup is required:
+
+```bash
+sudo xbps-install cups cups-filters avahi nss-mdns
+sudo ln -s /etc/sv/avahi-daemon /var/service
+```
+
+## Bluetooth
+
+[Bluetooth docs](https://docs.voidlinux.org/config/bluetooth.html)
+
+`libspa-bluetooth` is necessary for compatibility with PipeWire.
+
+```bash
+sudo xbps-install bluez libspa-bluetooth
+sudo ln -s /etc/sv/bluetoothd /var/service
+sudo usermod -aG bluetooth $USER
+```
+
+## Virtualization
+
+[libvirt docs](https://docs.voidlinux.org/config/containers-and-vms/libvirt.html#libvirt)
+
+```bash
+sudo xbps-install libvirt virt-manager qemu
+sudo ln -s /etc/sv/{libvirtd,virtlockd,virtlogd} /var/service
+sudo usermod -aG libvirt $USER
+```
+
+# Sway Configuration
 
 ## Enabling Dark Mode
 
-Assuming you have `gnome-themes-extra-gtk` installed, run the following:
+Ensure `gnome-themes-extra-gtk` is installed
 
 ```bash
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 ```
-## Fixing drun
-
-Sometimes `drun` refuses to open TUI applications with a `.desktop` entry
-because it attempts to use a default terminal emulator not configurable through
-the sway config file, in my case that was `xterm`.
-
-To fix this, create a symlink over the default terminal emulator:
+## Hack to Open TUI's Under dmenu
 
 ```bash
 sudo ln -s /usr/bin/kitty /usr/bin/xterm
 ```
+
+For some reason, `dmenu` ignores the Sway config and defaults to using the
+`xterm` binary when opening `.desktop` files.
