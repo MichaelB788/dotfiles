@@ -16,14 +16,10 @@ Configure your network with `nmtui`
 
 [PipeWire docs](https://docs.voidlinux.org/config/media/pipewire.html)
 
-The following bash snippet was taken straight from the documentation:
-
 ```bash
 sudo xbps-install pipewire
-sudo mkdir -p /etc/pipewire/pipewire.conf.d ~/.config/autostart
-sudo ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d/
-sudo ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
-sudo ln -s /usr/share/applications/pipewire.desktop ~/.config/autostart
+sudo mkdir -p /etc/pipewire/pipewire.conf.d
+sudo ln -s /usr/share/examples/{wireplumber/10-wireplumber.conf,pipewire/20-pipewire-pulse.conf} /etc/pipewire/pipewire.conf.d/
 ```
 
 A system reboot is required for changes to take effect.

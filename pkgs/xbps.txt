@@ -21,7 +21,6 @@ Waybar
 wofi
 font-awesome6
 light
-dex
 
 i3
 i3lock
