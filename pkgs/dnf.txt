@@ -1,7 +1,6 @@
 firefox
 chromium
 kitty
-gnome-tweaks
 
 lazygit
 kitty
