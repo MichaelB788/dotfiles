@@ -5,6 +5,7 @@
 [NetworkManager docs](https://docs.voidlinux.org/config/network/networkmanager.html)
 
 ```bash
+sudo xbps-install NetworkManager
 sudo rm /var/service/{dhcpcd,wpa_supplicant}
 sudo ln -s /etc/sv/NetworkManager /var/service
 ```
@@ -18,14 +19,14 @@ Configure your network with `nmtui`
 The following bash snippet was taken straight from the documentation:
 
 ```bash
-sudo mkdir -p /etc/pipewire/pipewire.conf.d
+sudo xbps-install pipewire
+sudo mkdir -p /etc/pipewire/pipewire.conf.d ~/.config/autostart
 sudo ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d/
 sudo ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
+sudo ln -s /usr/share/applications/pipewire.desktop ~/.config/autostart
 ```
 
 A system reboot is required for changes to take effect.
-
-Make sure `pipewire` starts automatically under your WM/DE of choice.
 
 # Optional Services
 
