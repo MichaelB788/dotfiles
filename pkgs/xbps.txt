@@ -5,41 +5,32 @@ polkit
 pipewire
 NetworkManager
 grimshot
+font-awesome
 
-xorg
+xorg-minimal
 xorg-server-xwayland
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
-gnome-themes-extra-gtk
 brightnessctl
 wl-clipboard
 
 sway
 swaylock
 swayidle
-Waybar
 wofi
-font-awesome6
-light
+i3status-rust
 
-i3
-i3lock
-i3status
-xrandr
-rofi
-feh
-
+Thunar
 firefox
 chromium
 pwvucontrol
 
-yazi
 lazygit
 kitty
 neovim
 vim
 
-btop
+htop
 bat
 fastfetch
 onefetch
@@ -52,6 +43,7 @@ unzip
 tree
 bash-completion
 
+clang
 clang-tools-extra
 gcc
 cmake
