@@ -36,6 +36,6 @@
 
 window {
   margin: 15px;
-  border: 1px solid green; /* border around the entire window */
+  border: 1px solid #41725e; /* border around the entire window */
   background-color: #1f1f1f;
 }
