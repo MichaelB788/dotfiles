@@ -1,9 +1,5 @@
 # Read `man 5 sway` for a complete reference.
 
-exec pipewire
-exec udiskie --automount
-
-exec light -S 10
 seat seat0 xcursor_theme Adwaita 10
 
 # Uncomment the line below to swap ctrl with caps
@@ -43,8 +39,7 @@ client.unfocused        $title_outline_unfocused $title_bg_unfocused $text_color
 client.urgent           $color_urgent            $color_urgent       $color_urgent $color_urgent         $color_urgent
 
 # Add gaps in between all application windows:
-gaps inner 3
-gaps outer 3
+gaps inner 5
 smart_gaps on
 hide_edge_borders smart
 
@@ -64,9 +59,9 @@ output HDMI-A-1 position 1600 0
 #====================================#
 # Set the waybar command for the application launcher:
 bar {
-    font pango:DejaVu Sans Mono, FontAwesome 12
+    font pango:DejaVu Sans Mono, FontAwesome 10
     position top
-    status_command i3status-rs ~/.config/i3status-rust/config.toml
+    status_command i3status
     colors {
         separator #666666
         background #222222
@@ -94,31 +89,18 @@ bindsym $mod+Shift+c reload
 # Quit your current session and return to the log-in manager/tty:
 bindsym $mod+Shift+e exec $HOME/.config/wofi/power-menu.sh
 
-# Screen locking (manual)
-set $lock_screen exec bash ~/.config/sway/lock_screen.sh
-bindsym $mod+Escape exec $lock_screen
+# Screen locking
+bindsym $mod+Escape exec swaylock & systemctl suspend
 
 
 #========================================#
 # Keyboard Shortcuts (Window Management) #
 #========================================#
-# Move focus to another window:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 # Move focus to another window ("cult of vim" version):
 bindsym $mod+j focus down
 bindsym $mod+h focus left
 bindsym $mod+l focus right
 bindsym $mod+k focus up
-
-# Move the window:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 # Move the the window ("cult of vim" version):
 bindsym $mod+Shift+h move left
@@ -240,25 +222,26 @@ bindsym $mod+minus scratchpad show
 # Keyboard Shortcuts (Hardware) #
 #===============================#
 # Audio
-bindsym XF86AudioRaiseVolume exec "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+; pkill -RTMIN+8 waybar"
-bindsym XF86AudioLowerVolume exec "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; pkill -RTMIN+8 waybar"
-bindsym XF86AudioMute exec "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; pkill -RTMIN+8 waybar"
+bindsym XF86AudioRaiseVolume exec "pactl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+; pkill -RTMIN+8 waybar"
+bindsym XF86AudioLowerVolume exec "pactl set-volume @DEFAULT_AUDIO_SINK@ 5%-; pkill -RTMIN+8 waybar"
+bindsym XF86AudioMute exec "pactl set-mute @DEFAULT_AUDIO_SINK@ toggle; pkill -RTMIN+8 waybar"
 
 # Brightness
-bindsym XF86MonBrightnessDown exec light -U 5
-bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 
 #=============================================#
 # Keyboard Shortcuts (launching applications) #
 #=============================================#
-# Set up wofi to replace dmenu as the launcher of choice:
-set $menu wofi --show drun  -i | xargs swaymsg exec --
+# Variables
+set $menu wofi --show drun -i | xargs swaymsg exec --
+set $term kitty
+set $browser firefox
 
 # Launch your browser:
-bindsym $mod+shift+b exec firefox
+bindsym $mod+shift+b exec $browser
 
 # Open a terminal emulator:
-set $term kitty
 bindsym $mod+Return exec $term
 
 # Kill focused window:
