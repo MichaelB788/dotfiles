@@ -61,6 +61,21 @@ sudo usermod -aG libvirt $USER
 
 # Sway Configuration
 
+## Automatic Login
+
+Add the following to `~/.bash_profile` for automatic login:
+
+```bash
+# Auto-launch Sway on TTY1 login
+if [ "$(tty)" = "/dev/tty1" ]; then
+    read -p "Start Sway? [y]es or [n]o: " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        exec dbus-run-session sway
+    fi
+fi
+```
+
 ## Enabling Dark Mode
 
 Ensure `gnome-themes-extra-gtk` is installed
