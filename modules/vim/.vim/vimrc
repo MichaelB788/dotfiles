@@ -1,9 +1,26 @@
+" === Plugins ===
+
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+
+" List your plugins here
+Plug 'tpope/vim-sensible'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+call plug#end()
+
 " === Options ===
+
 let mapleader = " "
 
 filetype plugin indent on
 syntax enable 
-highlight VertSplit cterm=NONE
 
 set noswapfile
 set incsearch
@@ -26,25 +43,11 @@ set splitright
 set splitbelow
 
 " === Keymaps ===
-nnoremap <C-s> <cmd>wa<cr>
-nnoremap <leader>rn <cmd>%s/\<<C-r><C-w>\>//g<Left><Left><cr>
-nnoremap <C-t> <cmd>term<cr>
 
 nnoremap <leader>tn <cmd>tabnew<cr>
-nnoremap <leader>sv <cmd>vsp<cr>
-nnoremap <leader>sh <cmd>sp<cr>
-
-nnoremap = <cmd>vertical resize +5<cr>
-nnoremap - <cmd>vertical resize -5<cr>
-nnoremap + <cmd>horizontal resize +2<cr>
-nnoremap _ <cmd>horizontal resize -2<cr>
-
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 
 nnoremap <S-l> gt
 nnoremap <S-h> gT
 
-nnoremap <leader>e :Ex<CR> 
+nnoremap <leader>e <cmd>Ex<CR> 
+nnoremap <leader>f <cmd>FZF<CR>
